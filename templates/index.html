@@ -1,0 +1,270 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+  body       { font-family: "Roboto", sans-serif; font-size: 18px; background-color: #f0f2f5; }
+  .card      { box-shadow: 0 1px 3px rgba(0,0,0,.15); border-radius: 12px; border: none; }
+
+  /* ── Quick-Post Box (Facebook-style) ── */
+  .quick-post-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.15);
+    margin-bottom: 20px;
+  }
+  .quick-post-box .avatar {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: #3398E1;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .quick-post-box textarea {
+    border: none;
+    background: #f0f2f5;
+    border-radius: 20px;
+    resize: none;
+    font-size: 16px;
+    padding: 10px 16px;
+  }
+  .quick-post-box textarea:focus { outline: none; box-shadow: none; background: #e8eaed; }
+  .quick-post-box input[type=text] {
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    border-radius: 0;
+    font-size: 15px;
+    padding: 6px 4px;
+    margin-bottom: 8px;
+  }
+  .quick-post-box input[type=text]:focus { outline: none; box-shadow: none; border-color: #3398E1; }
+
+  /* ── Post Card ── */
+  .post-card .card-header {
+    background: #fff;
+    border-bottom: 1px solid #f0f2f5;
+    border-radius: 12px 12px 0 0 !important;
+    padding: 14px 18px 10px;
+  }
+  .post-card .author-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: #3398E1;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .post-card .author-name  { font-weight: 700; font-size: 15px; color: #050505; }
+  .post-card .post-time    { font-size: 12px; color: #65676b; }
+  .post-card .post-title   { font-size: 17px; font-weight: 700; color: #050505; padding: 12px 18px 4px; }
+  .post-card .post-content { font-size: 15px; color: #3c3c3c; padding: 0 18px 12px; }
+
+  /* ── Like bar ── */
+  .like-bar {
+    border-top: 1px solid #e4e6eb;
+    padding: 4px 8px;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .btn-like {
+    display: flex; align-items: center; gap: 6px;
+    background: none; border: none;
+    font-size: 15px; font-weight: 600;
+    color: #65676b;
+    border-radius: 8px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background .15s;
+    flex: 1; justify-content: center;
+  }
+  .btn-like:hover { background: #f0f2f5; }
+  .btn-like.liked { color: #1877f2; }
+  .btn-like svg   { width: 20px; height: 20px; }
+
+  .btn-read {
+    display: flex; align-items: center; gap: 6px;
+    background: none; border: none;
+    font-size: 15px; font-weight: 600;
+    color: #65676b;
+    border-radius: 8px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background .15s;
+    flex: 1; justify-content: center;
+    text-decoration: none;
+  }
+  .btn-read:hover { background: #f0f2f5; color: #050505; }
+
+  /* last comment preview under each post */
+  .last-comment-preview {
+    background: #f7f8fa;
+    border-radius: 0 0 12px 12px;
+    padding: 8px 18px 12px;
+    font-size: 13px;
+    color: #555;
+  }
+  .last-comment-preview .lc-author { font-weight: 700; color: #050505; margin-right: 4px; }
+  .last-comment-preview .lc-date   { color: #888; font-size: 11px; margin-left: 6px; }
+</style>
+
+<!-- Header -->
+<header class="masthead">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 mx-auto">
+        <h3 class="my-4 mt-3 text-white">Welcome to my awesome Blog</h3>
+        <p class="text-light">We Love Django As much as you do..!</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-8">
+
+      <!-- ════════════════════════════════════════
+           Quick Post Box (Facebook-style)
+      ════════════════════════════════════════ -->
+      {% if user.is_authenticated %}
+      <div class="quick-post-box">
+        <div class="d-flex align-items-center mb-2 gap-2">
+          <div class="avatar">{{ user.username|first|upper }}</div>
+          <span class="font-weight-bold ml-2" style="font-size:15px;">{{ user.username }}</span>
+        </div>
+        <form method="POST" action="{% url 'home' %}">
+          {% csrf_token %}
+          <input type="text" name="title" class="form-control" placeholder="Post title..." required>
+          <textarea name="content" class="form-control mt-1" rows="3"
+                    placeholder="What's on your mind, {{ user.username }}?"></textarea>
+          <div class="text-right mt-2">
+            <button type="submit" class="btn btn-primary btn-sm px-4" style="border-radius:6px;">
+              Post
+            </button>
+          </div>
+        </form>
+      </div>
+      {% else %}
+      <div class="quick-post-box text-center text-muted" style="padding:20px;">
+        <a href="/admin/" class="btn btn-outline-primary btn-sm">Log in to post</a>
+      </div>
+      {% endif %}
+
+      <!-- ════════════════════════════════════════
+           Posts Feed
+      ════════════════════════════════════════ -->
+      {% for post in post_list %}
+      <div class="card post-card mb-3" id="post-{{ post.id }}">
+
+        <!-- Author header -->
+        <div class="card-header d-flex align-items-center">
+          <div class="author-avatar mr-2">{{ post.author.username|first|upper }}</div>
+          <div class="ml-2">
+            <div class="author-name">{{ post.author.username }}</div>
+            <div class="post-time">{{ post.created_on|date:"M d, Y · H:i" }}</div>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="post-title">{{ post.title }}</div>
+        <div class="post-content">{{ post.content|slice:":300" }}{% if post.content|length > 300 %}…{% endif %}</div>
+
+        <!-- Like count row -->
+        <div class="px-3 pb-1" style="font-size:13px; color:#65676b;">
+          {% if post.likes.count > 0 %}
+          <span>👍 <span id="like-count-{{ post.id }}">{{ post.likes.count }}</span> like{{ post.likes.count|pluralize }}</span>
+          {% else %}
+          <span id="like-count-wrap-{{ post.id }}"></span>
+          {% endif %}
+        </div>
+
+        <!-- Action bar -->
+        <div class="like-bar">
+          <button class="btn-like {% if post.id in liked_ids %}liked{% endif %}"
+                  id="like-btn-{{ post.id }}"
+                  data-slug="{{ post.slug }}"
+                  data-id="{{ post.id }}"
+                  onclick="toggleLike(this)"
+                  {% if not user.is_authenticated %}disabled title="Log in to like"{% endif %}>
+            <svg viewBox="0 0 24 24" fill="{% if post.id in liked_ids %}#1877f2{% else %}none{% endif %}"
+                 stroke="{% if post.id in liked_ids %}#1877f2{% else %}currentColor{% endif %}" stroke-width="2">
+              <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/>
+              <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
+            </svg>
+            <span id="like-label-{{ post.id }}">
+              {% if post.id in liked_ids %}Liked{% else %}Like{% endif %}
+            </span>
+          </button>
+
+          <a href="{% url 'post_detail' post.slug %}" class="btn-read">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            Read More
+          </a>
+        </div>
+
+        <!-- Last comment preview -->
+        {% with last=post.comments.all|last %}
+        {% if last and last.active %}
+        <div class="last-comment-preview">
+          <span class="lc-author">{{ last.author.username }}</span>
+          {{ last.content|slice:":120" }}{% if last.content|length > 120 %}…{% endif %}
+          <span class="lc-date">· {{ last.created_on|date:"M d · H:i" }}</span>
+        </div>
+        {% endif %}
+        {% endwith %}
+
+      </div>
+      {% empty %}
+      <div class="text-muted text-center mt-4">No posts yet. Be the first to post!</div>
+      {% endfor %}
+
+    </div>
+
+    {% block sidebar %}{% include 'sidebar.html' %}{% endblock sidebar %}
+  </div>
+</div>
+
+<!-- Like AJAX Script -->
+<script>
+function toggleLike(btn) {
+  const slug   = btn.dataset.slug;
+  const postId = btn.dataset.id;
+  fetch(`/${slug}/like/`, {
+    method: 'POST',
+    headers: {
+      'X-CSRFToken': '{{ csrf_token }}',
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(r => r.json())
+  .then(data => {
+    const countEl  = document.getElementById(`like-count-${postId}`);
+    const labelEl  = document.getElementById(`like-label-${postId}`);
+    const svg      = btn.querySelector('svg');
+
+    if (data.liked) {
+      btn.classList.add('liked');
+      svg.setAttribute('fill', '#1877f2');
+      svg.setAttribute('stroke', '#1877f2');
+      labelEl.textContent = 'Liked';
+    } else {
+      btn.classList.remove('liked');
+      svg.setAttribute('fill', 'none');
+      svg.setAttribute('stroke', 'currentColor');
+      labelEl.textContent = 'Like';
+    }
+
+    if (countEl) {
+      countEl.textContent = data.total_likes;
+    }
+  });
+}
+</script>
+
+{% endblock %}

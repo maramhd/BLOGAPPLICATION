@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+  body { background-color: #f0f2f5; }
+  .card { border: none; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.15); }
+
+  /* Like button in detail */
+  .btn-like-detail {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: none; border: 1px solid #ccc;
+    border-radius: 8px; padding: 8px 20px;
+    font-size: 15px; font-weight: 600; color: #65676b;
+    cursor: pointer; transition: all .15s;
+  }
+  .btn-like-detail:hover       { background: #f0f2f5; }
+  .btn-like-detail.liked       { color: #1877f2; border-color: #1877f2; background: #e7f0fd; }
+  .btn-like-detail svg         { width: 22px; height: 22px; }
+
+  /* Comments */
+  .comment-item {
+    display: flex; gap: 10px;
+    margin-bottom: 14px;
+  }
+  .comment-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: #3398E1; color: #fff;
+    font-weight: 700; font-size: 15px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .comment-bubble {
+    background: #f0f2f5;
+    border-radius: 0 12px 12px 12px;
+    padding: 10px 14px;
+    font-size: 14px;
+    flex: 1;
+  }
+  .comment-bubble .c-author { font-weight: 700; color: #050505; }
+  .comment-bubble .c-date   { font-size: 11px; color: #888; margin-left: 8px; }
+
+  /* Last comment highlight */
+  .last-comment-highlight {
+    border-left: 3px solid #1877f2;
+    padding-left: 10px;
+    margin-bottom: 18px;
+  }
+</style>
+
+<div class="container mt-3">
+  <div class="row">
+
+    <!-- ── Post Content ── -->
+    <div class="col-md-8">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h1 class="mb-1">{% block title %}{{ object.title }}{% endblock title %}</h1>
+          <p class="text-muted" style="font-size:13px;">
+            {{ object.author }} &middot; {{ object.created_on|date:"M d, Y · H:i" }}
+          </p>
+          <hr>
+          <p class="card-text" style="font-size:16px; line-height:1.7;">
+            {{ object.content | safe }}
+          </p>
+        </div>
+
+        <!-- Like bar -->
+        <div class="card-body border-top pt-2 pb-2 d-flex align-items-center gap-3">
+          <button class="btn-like-detail {% if user_liked %}liked{% endif %}"
+                  id="like-btn-detail"
+                  onclick="toggleLikeDetail('{{ object.slug }}')"
+                  {% if not user.is_authenticated %}disabled title="Log in to like"{% endif %}>
+            <svg viewBox="0 0 24 24"
+                 fill="{% if user_liked %}#1877f2{% else %}none{% endif %}"
+                 stroke="{% if user_liked %}#1877f2{% else %}currentColor{% endif %}"
+                 stroke-width="2">
+              <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/>
+              <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
+            </svg>
+            <span id="like-label-detail">{% if user_liked %}Liked{% else %}Like{% endif %}</span>
+          </button>
+          <span style="font-size:14px; color:#65676b;">
+            👍 <span id="like-count-detail">{{ total_likes }}</span>
+            like{{ total_likes|pluralize }}
+          </span>
+        </div>
+      </div>
+
+      <!-- ── Comments Section ── -->
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="mb-3">💬 Comments ({{ all_comments.count }})</h5>
+
+          {% if last_comment %}
+          <!-- آخر تعليق مميز -->
+          <div class="last-comment-highlight mb-3">
+            <small class="text-primary font-weight-bold">Latest comment</small>
+            <div class="comment-item mt-1">
+              <div class="comment-avatar">{{ last_comment.author.username|first|upper }}</div>
+              <div class="comment-bubble">
+                <span class="c-author">{{ last_comment.author.username }}</span>
+                <span class="c-date">{{ last_comment.created_on|date:"M d, Y · H:i" }}</span>
+                <div class="mt-1">{{ last_comment.content }}</div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+
+          {% if all_comments.count > 1 %}
+          <hr>
+          <small class="text-muted">All comments (oldest first)</small>
+          <div class="mt-2">
+            {% for comment in all_comments %}
+            <div class="comment-item">
+              <div class="comment-avatar">{{ comment.author.username|first|upper }}</div>
+              <div class="comment-bubble">
+                <span class="c-author">{{ comment.author.username }}</span>
+                <span class="c-date">{{ comment.created_on|date:"M d, Y · H:i" }}</span>
+                <div class="mt-1">{{ comment.content }}</div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          {% if not all_comments %}
+          <p class="text-muted">No comments yet. Be the first!</p>
+          {% endif %}
+        </div>
+
+        <!-- ── Comment Form ── -->
+        <div class="card-body border-top">
+          <h6 class="mb-3">Leave a Comment</h6>
+          {% if user.is_authenticated %}
+          <div class="d-flex gap-2">
+            <div style="width:36px; height:36px; border-radius:50%; background:#3398E1;
+                        color:#fff; font-weight:700; display:flex;
+                        align-items:center; justify-content:center; flex-shrink:0;">
+              {{ user.username|first|upper }}
+            </div>
+            <form method="POST" style="flex:1;">
+              {% csrf_token %}
+              {{ comment_form.content }}
+              <button type="submit" class="btn btn-primary btn-sm mt-2 px-4"
+                      style="border-radius:6px;">
+                Comment
+              </button>
+            </form>
+          </div>
+          {% else %}
+          <p class="text-muted">
+            <a href="/admin/">Log in</a> to leave a comment.
+          </p>
+          {% endif %}
+        </div>
+      </div>
+
+      <a href="{% url 'home' %}" class="btn btn-outline-secondary btn-sm mb-4">
+        &larr; Back to feed
+      </a>
+    </div>
+
+    {% block sidebar %}{% include 'sidebar.html' %}{% endblock sidebar %}
+  </div>
+</div>
+
+<!-- Like Script -->
+<script>
+function toggleLikeDetail(slug) {
+  fetch(`/${slug}/like/`, {
+    method: 'POST',
+    headers: {
+      'X-CSRFToken': '{{ csrf_token }}',
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(r => r.json())
+  .then(data => {
+    const btn    = document.getElementById('like-btn-detail');
+    const label  = document.getElementById('like-label-detail');
+    const count  = document.getElementById('like-count-detail');
+    const svg    = btn.querySelector('svg');
+
+    if (data.liked) {
+      btn.classList.add('liked');
+      svg.setAttribute('fill', '#1877f2');
+      svg.setAttribute('stroke', '#1877f2');
+      label.textContent = 'Liked';
+    } else {
+      btn.classList.remove('liked');
+      svg.setAttribute('fill', 'none');
+      svg.setAttribute('stroke', 'currentColor');
+      label.textContent = 'Like';
+    }
+    count.textContent = data.total_likes;
+  });
+}
+</script>
+
+{% endblock content %}
