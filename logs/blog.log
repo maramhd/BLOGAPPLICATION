@@ -1,0 +1,788 @@
+INFO 2026-05-11 13:56:19,647 autoreload 11140 11836 Watching for file changes with StatReloader
+INFO 2026-05-11 14:00:00,964 autoreload 16764 15224 Watching for file changes with StatReloader
+INFO 2026-05-11 14:09:22,295 autoreload 16952 17196 Watching for file changes with StatReloader
+INFO 2026-05-11 14:10:56,034 autoreload 15796 1404 Watching for file changes with StatReloader
+WARNING 2026-05-11 14:17:55,880 log 4536 4952 Bad Request: /api/posts/
+ERROR 2026-05-11 15:23:27,613 log 15264 7652 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\core\handlers\base.py", line 221, in _get_response
+    response = response.render()
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\defaulttags.py", line 202, in render
+    len_values = len(values)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\db\models\query.py", line 372, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\db\models\query.py", line 2000, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\db\models\query.py", line 135, in __iter__
+    setattr(obj, attr_name, row[col_pos])
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: property 'comment_count' of 'Post' object has no setter
+INFO 2026-05-11 15:23:28,970 views 15264 7652 New user registered: e2e_user1
+ERROR 2026-05-11 15:23:29,046 log 15264 7652 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\core\handlers\base.py", line 221, in _get_response
+    response = response.render()
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\defaulttags.py", line 202, in render
+    len_values = len(values)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\db\models\query.py", line 372, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\db\models\query.py", line 2000, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\db\models\query.py", line 135, in __iter__
+    setattr(obj, attr_name, row[col_pos])
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: property 'comment_count' of 'Post' object has no setter
+ERROR 2026-05-11 15:23:30,588 log 15264 7652 Internal Server Error: /post/create/
+Traceback (most recent call last):
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\views\generic\edit.py", line 182, in post
+    return super().post(request, *args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\blog\views.py", line 182, in form_valid
+    response = super().form_valid(form)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\views\generic\edit.py", line 134, in form_valid
+    return super().form_valid(form)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\views\generic\edit.py", line 63, in form_valid
+    return HttpResponseRedirect(self.get_success_url())
+                                ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\views\generic\edit.py", line 119, in get_success_url
+    if self.success_url:
+       ^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\utils\functional.py", line 187, in __wrapper__
+    result = func(*self._args, **self._kw)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'home' not found. 'home' is not a valid view function or pattern name.
+INFO 2026-05-11 15:23:30,597 views 15264 7652 Search performed for: E2E
+INFO 2026-05-11 15:23:30,597 services 15264 7652 Searching posts for query: E2E
+WARNING 2026-05-11 15:23:30,695 log 15264 7652 Not Found: /profile/edit/
+INFO 2026-05-11 15:23:30,703 views 15264 7652 User e2e_user1 logged out
+ERROR 2026-05-11 15:23:30,786 log 15264 7652 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\core\handlers\base.py", line 221, in _get_response
+    response = response.render()
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\defaulttags.py", line 202, in render
+    len_values = len(values)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\db\models\query.py", line 372, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\db\models\query.py", line 2000, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\db\models\query.py", line 135, in __iter__
+    setattr(obj, attr_name, row[col_pos])
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: property 'comment_count' of 'Post' object has no setter
+ERROR 2026-05-11 20:23:49,761 log 11716 3620 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\core\handlers\base.py", line 221, in _get_response
+    response = response.render()
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\defaulttags.py", line 579, in render
+    values = {key: val.resolve(context) for key, val in self.extra_context.items()}
+                   ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 815, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\defaultfilters.py", line 628, in last
+    return value[-1]
+           ~~~~~^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\db\models\query.py", line 421, in __getitem__
+    raise ValueError("Negative indexing is not supported.")
+ValueError: Negative indexing is not supported.
+INFO 2026-05-11 20:24:34,630 views 16988 2472 New user registered: e2e_user1
+ERROR 2026-05-11 20:24:36,078 log 16988 2472 Internal Server Error: /post/create/
+Traceback (most recent call last):
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\views\generic\edit.py", line 182, in post
+    return super().post(request, *args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\blog\views.py", line 182, in form_valid
+    response = super().form_valid(form)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\views\generic\edit.py", line 134, in form_valid
+    return super().form_valid(form)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\views\generic\edit.py", line 63, in form_valid
+    return HttpResponseRedirect(self.get_success_url())
+                                ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\views\generic\edit.py", line 119, in get_success_url
+    if self.success_url:
+       ^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\utils\functional.py", line 187, in __wrapper__
+    result = func(*self._args, **self._kw)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'home' not found. 'home' is not a valid view function or pattern name.
+INFO 2026-05-11 20:24:36,084 views 16988 2472 Search performed for: E2E
+INFO 2026-05-11 20:24:36,085 services 16988 2472 Searching posts for query: E2E
+ERROR 2026-05-11 20:24:36,227 log 16988 2472 Internal Server Error: /profile/e2e_user1/
+Traceback (most recent call last):
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\blog\views.py", line 438, in profile_view
+    return render(request, 'profile.html', context)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'post_delete' not found. 'post_delete' is not a valid view function or pattern name.
+WARNING 2026-05-11 20:24:36,243 log 16988 2472 Not Found: /profile/edit/
+INFO 2026-05-11 20:24:36,252 views 16988 2472 User e2e_user1 logged out
+INFO 2026-05-11 20:26:35,645 views 16860 13760 New user registered: e2e_user1
+INFO 2026-05-11 20:26:37,460 views 16860 13760 Post 'E2E Test Post' created by e2e_user1
+ERROR 2026-05-11 20:26:37,593 log 16860 13760 Internal Server Error: /post/e2e-test-post/edit/
+Traceback (most recent call last):
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\views\generic\edit.py", line 123, in get_success_url
+    url = self.object.get_absolute_url()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Post' object has no attribute 'get_absolute_url'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 136, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\views\generic\edit.py", line 206, in post
+    return super().post(request, *args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\blog\views.py", line 212, in form_valid
+    response = super().form_valid(form)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\views\generic\edit.py", line 134, in form_valid
+    return super().form_valid(form)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\views\generic\edit.py", line 63, in form_valid
+    return HttpResponseRedirect(self.get_success_url())
+                                ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\views\generic\edit.py", line 125, in get_success_url
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: No URL to redirect to. Either provide a url or define a get_absolute_url method on the Model.
+INFO 2026-05-11 20:26:37,612 services 16860 13760 Comment added to post 'E2E Test Post - Edited' by e2e_user1
+INFO 2026-05-11 20:26:37,615 views 16860 13760 Comment added to post 'E2E Test Post - Edited' by e2e_user1
+INFO 2026-05-11 20:26:37,651 services 16860 13760 Post 'E2E Test Post - Edited' liked by e2e_user1
+INFO 2026-05-11 20:26:37,652 views 16860 13760 Post e2e-test-post liked by e2e_user1
+INFO 2026-05-11 20:26:37,655 views 16860 13760 Search performed for: E2E
+INFO 2026-05-11 20:26:37,655 services 16860 13760 Searching posts for query: E2E
+ERROR 2026-05-11 20:26:37,737 log 16860 13760 Internal Server Error: /profile/e2e_user1/
+Traceback (most recent call last):
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\blog\views.py", line 438, in profile_view
+    return render(request, 'profile.html', context)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'post_delete' not found. 'post_delete' is not a valid view function or pattern name.
+WARNING 2026-05-11 20:26:37,761 log 16860 13760 Not Found: /profile/edit/
+INFO 2026-05-11 20:26:37,779 views 16860 13760 User e2e_user1 logged out
+INFO 2026-05-11 20:27:39,580 views 8384 8816 New user registered: e2e_user1
+INFO 2026-05-11 20:27:40,969 views 8384 8816 Post 'E2E Test Post' created by e2e_user1
+INFO 2026-05-11 20:27:41,042 views 8384 8816 Post 'E2E Test Post - Edited' updated by e2e_user1
+INFO 2026-05-11 20:27:41,088 services 8384 8816 Comment added to post 'E2E Test Post - Edited' by e2e_user1
+INFO 2026-05-11 20:27:41,089 views 8384 8816 Comment added to post 'E2E Test Post - Edited' by e2e_user1
+INFO 2026-05-11 20:27:41,138 services 8384 8816 Post 'E2E Test Post - Edited' liked by e2e_user1
+INFO 2026-05-11 20:27:41,140 views 8384 8816 Post e2e-test-post liked by e2e_user1
+INFO 2026-05-11 20:27:41,143 views 8384 8816 Search performed for: E2E
+INFO 2026-05-11 20:27:41,143 services 8384 8816 Searching posts for query: E2E
+ERROR 2026-05-11 20:27:41,271 log 8384 8816 Internal Server Error: /profile/e2e_user1/
+Traceback (most recent call last):
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\blog\views.py", line 442, in profile_view
+    return render(request, 'profile.html', context)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'post_delete' not found. 'post_delete' is not a valid view function or pattern name.
+WARNING 2026-05-11 20:27:41,292 log 8384 8816 Not Found: /profile/edit/
+INFO 2026-05-11 20:27:41,306 views 8384 8816 User e2e_user1 logged out
+INFO 2026-05-11 20:28:25,884 views 10036 12028 New user registered: e2e_user1
+INFO 2026-05-11 20:28:29,456 views 10036 12028 Post 'E2E Test Post' created by e2e_user1
+INFO 2026-05-11 20:28:29,529 views 10036 12028 Post 'E2E Test Post - Edited' updated by e2e_user1
+INFO 2026-05-11 20:28:29,571 services 10036 12028 Comment added to post 'E2E Test Post - Edited' by e2e_user1
+INFO 2026-05-11 20:28:29,573 views 10036 12028 Comment added to post 'E2E Test Post - Edited' by e2e_user1
+INFO 2026-05-11 20:28:29,622 services 10036 12028 Post 'E2E Test Post - Edited' liked by e2e_user1
+INFO 2026-05-11 20:28:29,623 views 10036 12028 Post e2e-test-post liked by e2e_user1
+INFO 2026-05-11 20:28:29,627 views 10036 12028 Search performed for: E2E
+INFO 2026-05-11 20:28:29,627 services 10036 12028 Searching posts for query: E2E
+WARNING 2026-05-11 20:28:29,725 log 10036 12028 Not Found: /profile/edit/
+INFO 2026-05-11 20:28:29,735 views 10036 12028 User e2e_user1 logged out
+INFO 2026-05-11 20:29:19,488 views 10968 16652 New user registered: e2e_user1
+INFO 2026-05-11 20:29:21,027 views 10968 16652 Post 'E2E Test Post' created by e2e_user1
+INFO 2026-05-11 20:29:21,100 views 10968 16652 Post 'E2E Test Post - Edited' updated by e2e_user1
+INFO 2026-05-11 20:29:21,143 services 10968 16652 Comment added to post 'E2E Test Post - Edited' by e2e_user1
+INFO 2026-05-11 20:29:21,145 views 10968 16652 Comment added to post 'E2E Test Post - Edited' by e2e_user1
+INFO 2026-05-11 20:29:21,191 services 10968 16652 Post 'E2E Test Post - Edited' liked by e2e_user1
+INFO 2026-05-11 20:29:21,194 views 10968 16652 Post e2e-test-post liked by e2e_user1
+INFO 2026-05-11 20:29:21,197 views 10968 16652 Search performed for: E2E
+INFO 2026-05-11 20:29:21,198 services 10968 16652 Searching posts for query: E2E
+WARNING 2026-05-11 20:29:21,286 log 10968 16652 Not Found: /profile/edit/
+INFO 2026-05-11 20:29:21,298 views 10968 16652 User e2e_user1 logged out
+INFO 2026-05-11 20:40:58,544 autoreload 8448 5372 Watching for file changes with StatReloader
+INFO 2026-05-11 20:41:26,270 log 8448 3464 "GET / HTTP/1.1" 200 14812
+INFO 2026-05-11 20:41:42,892 log 8448 3464 "GET /post/django-post/ HTTP/1.1" 200 8070
+INFO 2026-05-11 20:42:06,250 log 8448 3464 "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-05-11 20:42:06,364 log 8448 3464 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4080
+INFO 2026-05-11 20:42:06,607 log 8448 3464 "GET /static/admin/css/base.css HTTP/1.1" 200 23100
+INFO 2026-05-11 20:42:06,706 log 8448 1224 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2026-05-11 20:42:06,710 log 8448 15064 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2026-05-11 20:42:06,731 log 8448 15920 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 3538
+INFO 2026-05-11 20:42:06,776 log 8448 924 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16273
+INFO 2026-05-11 20:42:06,814 log 8448 9324 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2026-05-11 20:42:06,819 log 8448 924 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2026-05-11 20:42:18,508 log 8448 924 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4272
+INFO 2026-05-11 20:43:03,347 log 8448 924 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4248
+INFO 2026-05-11 20:43:03,410 log 8448 924 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2026-05-11 20:43:03,410 log 8448 9324 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2026-05-11 20:43:03,411 log 8448 15064 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-05-11 20:43:03,411 log 8448 1224 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2026-05-11 20:43:03,411 log 8448 15920 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:43:03,411 log 8448 3464 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2026-05-11 20:43:03,486 log 8448 3464 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:43:19,640 log 8448 3464 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4250
+INFO 2026-05-11 20:43:26,829 log 8448 3464 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4080
+INFO 2026-05-11 20:43:33,430 log 8448 3464 "GET / HTTP/1.1" 200 14812
+INFO 2026-05-11 20:45:09,597 log 8448 3464 "GET /post/api-test-post/ HTTP/1.1" 200 8079
+INFO 2026-05-11 20:45:13,349 log 8448 3464 "GET / HTTP/1.1" 200 14812
+INFO 2026-05-11 20:48:44,541 autoreload 15552 2288 Watching for file changes with StatReloader
+INFO 2026-05-11 20:48:50,800 log 15552 10728 "GET / HTTP/1.1" 200 14812
+INFO 2026-05-11 20:48:53,611 log 15552 10728 "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-05-11 20:48:53,656 log 15552 10728 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4080
+INFO 2026-05-11 20:48:53,699 log 15552 10728 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2026-05-11 20:48:53,699 log 15552 1276 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2026-05-11 20:48:53,712 log 15552 13720 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:48:53,718 log 15552 5064 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-05-11 20:48:53,722 log 15552 7896 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2026-05-11 20:48:53,723 log 15552 14156 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2026-05-11 20:48:53,797 log 15552 14156 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:49:08,738 log 15552 14156 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2026-05-11 20:49:08,783 log 15552 14156 "GET /admin/ HTTP/1.1" 200 8781
+INFO 2026-05-11 20:49:08,951 log 15552 14156 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2026-05-11 20:49:08,979 log 15552 7896 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 978
+INFO 2026-05-11 20:49:08,979 log 15552 14156 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 593
+INFO 2026-05-11 20:49:17,967 log 15552 14156 "GET /admin/blog/comment/ HTTP/1.1" 200 14270
+INFO 2026-05-11 20:49:18,013 log 15552 14156 "GET /static/admin/css/changelists.css HTTP/1.1" 200 7498
+INFO 2026-05-11 20:49:18,073 log 15552 13720 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2026-05-11 20:49:18,097 log 15552 7896 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-11 20:49:18,105 log 15552 1276 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2026-05-11 20:49:18,107 log 15552 10728 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2026-05-11 20:49:18,181 log 15552 5064 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2026-05-11 20:49:18,197 log 15552 14156 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2026-05-11 20:49:18,238 log 15552 13720 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2026-05-11 20:49:18,240 log 15552 10728 "GET /static/admin/img/search.svg HTTP/1.1" 200 607
+INFO 2026-05-11 20:49:18,255 log 15552 14156 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 558
+INFO 2026-05-11 20:49:18,272 log 15552 7896 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2026-05-11 20:49:18,306 log 15552 7896 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2026-05-11 20:49:18,394 log 15552 1276 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2026-05-11 20:49:18,439 log 15552 7896 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 928
+INFO 2026-05-11 20:49:18,445 log 15552 14156 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1761
+INFO 2026-05-11 20:49:18,444 log 15552 1276 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 593
+INFO 2026-05-11 20:49:22,130 log 15552 14156 "GET /admin/blog/comment/4/change/ HTTP/1.1" 200 16154
+INFO 2026-05-11 20:49:22,180 log 15552 14156 "GET /static/admin/css/forms.css HTTP/1.1" 200 8831
+INFO 2026-05-11 20:49:22,186 log 15552 7896 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-11 20:49:22,207 log 15552 1276 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2026-05-11 20:49:22,257 log 15552 1276 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11811
+INFO 2026-05-11 20:49:22,282 log 15552 14156 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2026-05-11 20:49:47,159 log 15552 14156 "POST /admin/blog/comment/4/change/ HTTP/1.1" 302 0
+INFO 2026-05-11 20:49:47,195 log 15552 14156 "GET /admin/blog/comment/add/ HTTP/1.1" 200 16061
+INFO 2026-05-11 20:49:47,247 log 15552 14156 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-11 20:49:52,884 log 15552 14156 "GET /admin/blog/like/ HTTP/1.1" 200 13579
+INFO 2026-05-11 20:49:52,930 log 15552 14156 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-11 20:49:56,848 log 15552 14156 "GET /admin/blog/post/ HTTP/1.1" 200 15446
+INFO 2026-05-11 20:49:56,895 log 15552 14156 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-11 20:50:04,676 log 15552 14156 "GET /admin/blog/post/?_facets=True HTTP/1.1" 200 16040
+INFO 2026-05-11 20:50:04,717 log 15552 14156 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2026-05-11 20:50:04,723 log 15552 1276 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2026-05-11 20:50:04,723 log 15552 10728 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-05-11 20:50:04,723 log 15552 7896 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:50:04,726 log 15552 13720 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2026-05-11 20:50:04,739 log 15552 14156 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-11 20:50:04,802 log 15552 14156 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:50:04,849 log 15552 14156 "GET /static/admin/img/icon-hidelink.svg HTTP/1.1" 200 1131
+INFO 2026-05-11 20:50:06,889 log 15552 14156 "GET /admin/blog/post/add/?_changelist_filters=_facets%3DTrue HTTP/1.1" 200 19733
+INFO 2026-05-11 20:50:06,957 log 15552 14156 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 689
+INFO 2026-05-11 20:50:06,958 log 15552 13720 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-11 20:50:31,031 log 15552 13720 "GET /admin/blog/category/3/change/?_to_field=id HTTP/1.1" 200 11441
+INFO 2026-05-11 20:50:31,087 log 15552 13720 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2026-05-11 20:50:31,096 log 15552 14156 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-11 20:50:31,100 log 15552 10728 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:50:31,100 log 15552 7896 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:50:31,103 log 15552 1276 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:50:31,103 log 15552 5064 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:50:31,113 log 15552 13720 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:50:31,122 log 15552 10728 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:50:31,126 log 15552 7896 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:50:31,141 log 15552 1276 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:50:31,142 log 15552 5064 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:50:31,196 log 15552 5064 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2026-05-11 20:50:31,199 log 15552 1276 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:50:38,326 log 15552 1276 "GET /admin/blog/post/add/?_changelist_filters=_facets%3DTrue HTTP/1.1" 200 19733
+INFO 2026-05-11 20:51:44,119 log 15552 1276 "POST /admin/blog/post/add/?_changelist_filters=_facets%3DTrue HTTP/1.1" 200 20006
+INFO 2026-05-11 20:51:44,173 log 15552 14156 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2026-05-11 20:51:44,173 log 15552 1276 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2026-05-11 20:51:44,173 log 15552 7896 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:51:44,174 log 15552 10728 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-05-11 20:51:44,174 log 15552 5064 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2026-05-11 20:51:44,182 log 15552 13720 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-11 20:51:44,372 log 15552 5064 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2026-05-11 20:51:44,373 log 15552 13720 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:51:44,395 log 15552 10728 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2026-05-11 20:51:44,395 log 15552 5064 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2026-05-11 20:51:44,399 log 15552 13720 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+INFO 2026-05-11 20:52:05,975 log 15552 14748 "POST /admin/blog/post/add/?_changelist_filters=_facets%3DTrue HTTP/1.1" 302 0
+INFO 2026-05-11 20:52:06,062 log 15552 14748 "GET /admin/blog/post/?_facets=True HTTP/1.1" 200 16741
+INFO 2026-05-11 20:52:06,119 log 15552 14748 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2026-05-11 20:52:06,126 log 15552 5552 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-11 20:52:06,147 log 15552 14748 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:52:06,151 log 15552 10232 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:52:06,167 log 15552 5552 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:52:06,181 log 15552 14748 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:52:06,184 log 15552 10232 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:52:06,184 log 15552 9456 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:52:06,187 log 15552 5552 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2026-05-11 20:52:06,192 log 15552 2724 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:52:06,219 log 15552 8856 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:52:06,225 log 15552 8856 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2026-05-11 20:52:06,257 log 15552 8856 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2026-05-11 20:52:09,412 log 15552 8856 "GET /admin/ HTTP/1.1" 200 9546
+INFO 2026-05-11 20:52:09,451 log 15552 8856 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2026-05-11 20:52:15,370 log 15552 8856 "GET /admin/ HTTP/1.1" 200 9546
+INFO 2026-05-11 20:52:20,599 log 15552 8856 "GET /admin/ HTTP/1.1" 200 9546
+INFO 2026-05-11 20:52:27,046 log 15552 8856 "GET / HTTP/1.1" 200 15441
+INFO 2026-05-11 22:35:02,077 autoreload 11132 252 Watching for file changes with StatReloader

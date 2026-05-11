@@ -136,7 +136,7 @@
           <div class="avatar">{{ user.username|first|upper }}</div>
           <span class="font-weight-bold ml-2" style="font-size:15px;">{{ user.username }}</span>
         </div>
-        <form method="POST" action="{% url 'home' %}">
+        <form method="POST" action="{% url 'blog:home' %}">
           {% csrf_token %}
           <input type="text" name="title" class="form-control" placeholder="Post title..." required>
           <textarea name="content" class="form-control mt-1" rows="3"
@@ -200,7 +200,7 @@
             </span>
           </button>
 
-          <a href="{% url 'post_detail' post.slug %}" class="btn-read">
+          <a href="{% url 'blog:post_detail' slug=post.slug %}" class="btn-read">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
               <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
             </svg>
@@ -208,16 +208,10 @@
           </a>
         </div>
 
-        <!-- Last comment preview -->
-        {% with last=post.comments.all|last %}
-        {% if last and last.active %}
-        <div class="last-comment-preview">
-          <span class="lc-author">{{ last.author.username }}</span>
-          {{ last.content|slice:":120" }}{% if last.content|length > 120 %}…{% endif %}
-          <span class="lc-date">· {{ last.created_on|date:"M d · H:i" }}</span>
+        <!-- Comment count -->
+        <div class="comment-count">
+          <span class="comment-badge">{{ post.comment_count }} comments</span>
         </div>
-        {% endif %}
-        {% endwith %}
 
       </div>
       {% empty %}
