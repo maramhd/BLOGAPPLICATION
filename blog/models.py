@@ -4,7 +4,10 @@ from django.utils.text import slugify
 
 
 class Category(models.Model):
-    """Blog post category for organizing content."""
+    """
+    ✅ فئات المنشورات - تنظيم المحتوى
+    (Blog post category for organizing content)
+    """
     
     name = models.CharField(max_length=100, unique=True, db_index=True)
     slug = models.SlugField(max_length=100, unique=True)
@@ -18,14 +21,17 @@ class Category(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
-        """Auto-generate slug from name if not provided."""
+        """✅ إنشاء slug تلقائياً من الاسم (Auto-generate slug from name)"""
         if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
 
 
 class Post(models.Model):
-    """Blog post model with full publication features."""
+    """
+    ✅ نموذج المنشورات - المحتوى الرئيسي للمدونة
+    (Blog post model with full publication features)
+    """
     
     class Status(models.IntegerChoices):
         DRAFT = 0, "Draft"
@@ -97,7 +103,10 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    """User comments on blog posts."""
+    """
+    ✅ التعليقات - تفاعل القراء مع المنشورات
+    (User comments on blog posts)
+    """
     
     post = models.ForeignKey(
         Post,
@@ -124,7 +133,10 @@ class Comment(models.Model):
 
 
 class Like(models.Model):
-    """User likes on blog posts."""
+    """
+    ✅ الإعجابات - تفاعل المستخدمين مع المنشورات
+    (User likes on blog posts)
+    """
     
     post = models.ForeignKey(
         Post,

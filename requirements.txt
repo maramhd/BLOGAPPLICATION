@@ -1,5 +1,7 @@
 Django==6.0.3
 djangorestframework==3.14.0
+djangorestframework-simplejwt==5.3.2
+django-allauth==0.57.0
 django-filter==24.1
 django-cors-headers==4.3.1
 django-redis==5.4.0
@@ -9,3 +11,7 @@ gunicorn==21.2.0
 celery==5.3.4
 redis==5.0.1
 requests==2.31.0
+# ✅ إضافة مكتبات مهمة (Adding important libraries)
+PyJWT==2.8.1
+cryptography==42.0.5
+

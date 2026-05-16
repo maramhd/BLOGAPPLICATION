@@ -169,6 +169,13 @@
           </div>
         </div>
 
+        <!-- ✅ Featured Image - Responsive Thumbnail -->
+        {% if post.image %}
+        <img src="{{ post.image.url }}"
+             style="width: 100%; height: 250px; object-fit: cover; border-top: 1px solid #f0f2f5; border-bottom: 1px solid #f0f2f5;"
+             alt="{{ post.title }}">
+        {% endif %}
+
         <!-- Content -->
         <div class="post-title">{{ post.title }}</div>
         <div class="post-content">{{ post.content|slice:":300" }}{% if post.content|length > 300 %}…{% endif %}</div>
@@ -229,7 +236,8 @@
 function toggleLike(btn) {
   const slug   = btn.dataset.slug;
   const postId = btn.dataset.id;
-  fetch(`/${slug}/like/`, {
+  // ✅ Fixed: Use correct URL pattern /post/{slug}/like/
+  fetch(`/post/${slug}/like/`, {
     method: 'POST',
     headers: {
       'X-CSRFToken': '{{ csrf_token }}',
