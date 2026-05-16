@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     
     # Third-party apps
     'rest_framework',
-    'rest_framework.authtoken',  # ✅ Token authentication
+    'rest_framework.authtoken',  #  Token authentication
     'django_filters',
     'corsheaders',
     
@@ -52,6 +52,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -140,13 +141,13 @@ CACHE_TIMEOUT = 3600
 # ============================================================================
 # REST FRAMEWORK CONFIGURATION
 # ============================================================================
-# ✅ تكوين كامل لـ DRF مع JWT و Token Authentication
+#  تكوين كامل لـ DRF مع JWT و Token Authentication
 # (Complete DRF configuration with JWT and Token Authentication)
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',  # ✅ JWT
-        'rest_framework.authentication.TokenAuthentication',           # ✅ Token
-        'rest_framework.authentication.SessionAuthentication',         # ✅ Session
+        'rest_framework_simplejwt.authentication.JWTAuthentication',  #  JWT
+        'rest_framework.authentication.TokenAuthentication',           # Token
+        'rest_framework.authentication.SessionAuthentication',         # Session
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
@@ -175,7 +176,7 @@ REST_FRAMEWORK = {
 # ============================================================================
 # JWT CONFIGURATION
 # ============================================================================
-# ✅ إعدادات JWT للمصادقة الآمنة
+#  إعدادات JWT للمصادقة الآمنة
 # (JWT settings for secure authentication)
 from datetime import timedelta
 
@@ -249,7 +250,6 @@ LOGGING = {
             'level': 'INFO',
             'class': 'logging.StreamHandler',
             'formatter': 'simple',
-            'encoding': 'utf-8',  # ✅ UTF-8 encoding for console output
         },
         'file': {
             'level': 'INFO',
@@ -258,7 +258,7 @@ LOGGING = {
             'maxBytes': 1024 * 1024 * 10,  # 10MB
             'backupCount': 5,
             'formatter': 'verbose',
-            'encoding': 'utf-8',  # ✅ دعم الأحرف الخاصة (Support special characters)
+            'encoding': 'utf-8',  # (Support special characters)
         },
         'security': {
             'level': 'WARNING',
@@ -267,7 +267,7 @@ LOGGING = {
             'maxBytes': 1024 * 1024 * 10,
             'backupCount': 5,
             'formatter': 'verbose',
-            'encoding': 'utf-8',  # ✅ دعم الأحرف الخاصة (Support special characters)
+            'encoding': 'utf-8',  # (Support special characters)
         },
     },
     'loggers': {
@@ -321,7 +321,7 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 # ============================================================================
 # EMAIL CONFIGURATION (Password Reset)
 # ============================================================================
-# ✅ تطوير: استخدام console backend لعرض الروابط في الـ console
+#  تطوير: استخدام console backend لعرض الروابط في الـ console
 # (Development: Use console backend to display links in console)
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
