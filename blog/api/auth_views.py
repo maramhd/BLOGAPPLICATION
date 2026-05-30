@@ -1,5 +1,5 @@
 """
-✅ DRF Authentication Views - User Registration and Login
+ DRF Authentication Views - User Registration and Login
 تطبيق المصادقة في API - تسجيل المستخدمين والدخول
 """
 
@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 
 class UserRegisterView(APIView):
     """
-    ✅ تسجيل مستخدم جديد عبر API
+     تسجيل مستخدم جديد عبر API
     (User registration endpoint)
     
     POST /api/auth/register/
@@ -104,7 +104,7 @@ class UserRegisterView(APIView):
 
 class UserLoginView(APIView):
     """
-    ✅ تسجيل الدخول عبر API
+    تسجيل الدخول عبر API
     (User login endpoint)
     
     POST /api/auth/login/
@@ -164,7 +164,7 @@ class UserLoginView(APIView):
 @api_view(['POST'])
 def logout_view(request):
     """
-    ✅ تسجيل الخروج عبر API
+   تسجيل الخروج عبر API
     (User logout endpoint - invalidate token)
     
     POST /api/auth/logout/

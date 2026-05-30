@@ -5,7 +5,7 @@ URL configuration for BlogProject.
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.contrib.auth import views as auth_views  # ✅ Password reset views
+from django.contrib.auth import views as auth_views  #  Password reset views
 from django.urls import path, include
 
 
@@ -16,7 +16,7 @@ urlpatterns = [
     path('api/', include('blog.api.urls')),
     path('api-auth/', include('rest_framework.urls')),
     
-    # ✅ Password Reset Views
+    #  Password Reset Views
     path('password-reset/', 
          auth_views.PasswordResetView.as_view(template_name='password_reset.html'), 
          name='password_reset'),

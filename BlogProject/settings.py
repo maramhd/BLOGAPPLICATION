@@ -9,7 +9,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-hpo_pp1js9!t*3l4xl#0k
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
-
+#في مرحلة التطوير نضعهاtrue  وفي مرحلة الانتاج نضعها false
 ALLOWED_HOSTS_STR = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1,testserver')
 ALLOWED_HOSTS = [host.strip() for host in ALLOWED_HOSTS_STR.split(',')]
 

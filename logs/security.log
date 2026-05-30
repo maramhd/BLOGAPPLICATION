@@ -251,3 +251,5 @@ Traceback (most recent call last):
   File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\http\request.py", line 206, in get_host
     raise DisallowedHost(msg)
 django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+WARNING 2026-05-30 07:04:18,367 log 20800 18484 Forbidden (CSRF token from POST incorrect.): /login/
+WARNING 2026-05-30 07:04:28,336 log 20800 18484 Forbidden (CSRF token from POST incorrect.): /login/

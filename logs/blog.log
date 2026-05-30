@@ -1090,3 +1090,527 @@ INFO 2026-05-16 10:08:26,490 basehttp 18276 1840 "GET /static/admin/css/base.css
 INFO 2026-05-16 10:08:26,490 basehttp 18276 17812 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
 INFO 2026-05-16 10:08:26,555 basehttp 18276 1840 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
 INFO 2026-05-16 10:08:37,960 basehttp 18276 1840 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4348
+INFO 2026-05-29 13:52:42,202 autoreload 5796 15112 Watching for file changes with StatReloader
+INFO 2026-05-29 13:58:38,504 autoreload 2772 9816 Watching for file changes with StatReloader
+INFO 2026-05-29 13:58:48,245 basehttp 2772 6348 "GET / HTTP/1.1" 200 13924
+INFO 2026-05-29 13:58:51,621 basehttp 2772 9392 "GET /media/posts/meri.jpeg HTTP/1.1" 200 95842
+INFO 2026-05-29 13:58:51,626 basehttp 2772 6348 "GET /media/posts/screen.png HTTP/1.1" 200 704278
+INFO 2026-05-29 13:58:55,809 basehttp 2772 14856 "GET / HTTP/1.1" 200 13924
+INFO 2026-05-29 13:58:56,672 basehttp 2772 14856 "GET /media/posts/screen.png HTTP/1.1" 200 704278
+INFO 2026-05-29 13:59:02,401 basehttp 2772 14856 "GET /media/posts/meri.jpeg HTTP/1.1" 200 95842
+WARNING 2026-05-29 13:59:07,565 log 2772 14856 Not Found: /favicon.ico
+WARNING 2026-05-29 13:59:07,566 basehttp 2772 14856 "GET /favicon.ico HTTP/1.1" 404 7522
+INFO 2026-05-29 14:01:55,174 basehttp 2772 14856 "GET /login/ HTTP/1.1" 200 3999
+INFO 2026-05-29 14:02:01,717 basehttp 2772 14856 "GET /register/ HTTP/1.1" 200 5533
+INFO 2026-05-29 14:02:06,783 basehttp 2772 14856 "GET /login/ HTTP/1.1" 200 3999
+WARNING 2026-05-29 14:02:09,047 views 2772 14856 Failed login attempt for username: None
+INFO 2026-05-29 14:02:09,050 basehttp 2772 14856 "POST /login/ HTTP/1.1" 200 4333
+INFO 2026-05-29 14:02:11,965 basehttp 2772 14856 "GET / HTTP/1.1" 200 13924
+INFO 2026-05-29 14:02:13,995 basehttp 2772 14856 "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-05-29 14:02:14,049 basehttp 2772 14856 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+INFO 2026-05-29 14:02:14,080 basehttp 2772 14856 "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2026-05-29 14:02:14,087 basehttp 2772 14848 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2026-05-29 14:02:14,092 basehttp 2772 3624 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2026-05-29 14:02:14,092 basehttp 2772 13072 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2026-05-29 14:02:14,101 basehttp 2772 7748 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2026-05-29 14:02:14,279 basehttp 2772 7748 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2026-05-29 14:02:14,280 basehttp 2772 14772 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2026-05-29 22:07:12,855 autoreload 2772 9816 C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\blog\models.py changed, reloading.
+INFO 2026-05-29 22:07:15,040 autoreload 17876 18304 Watching for file changes with StatReloader
+INFO 2026-05-29 22:07:18,551 autoreload 17876 18304 C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\blog\models.py changed, reloading.
+INFO 2026-05-29 22:07:19,665 autoreload 11232 16400 Watching for file changes with StatReloader
+INFO 2026-05-29 22:07:25,893 autoreload 11232 16400 C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\blog\models.py changed, reloading.
+INFO 2026-05-29 22:07:26,973 autoreload 7660 14776 Watching for file changes with StatReloader
+INFO 2026-05-29 22:07:30,663 autoreload 7660 14776 C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\blog\models.py changed, reloading.
+INFO 2026-05-29 22:07:31,770 autoreload 2804 18004 Watching for file changes with StatReloader
+INFO 2026-05-29 22:10:30,052 autoreload 2804 18004 C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\BlogProject\urls.py changed, reloading.
+INFO 2026-05-29 22:10:31,403 autoreload 13220 17448 Watching for file changes with StatReloader
+INFO 2026-05-29 22:10:57,851 autoreload 13220 17448 C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\BlogProject\urls.py changed, reloading.
+INFO 2026-05-29 22:10:59,310 autoreload 2228 8464 Watching for file changes with StatReloader
+INFO 2026-05-29 22:12:36,875 autoreload 2228 8464 C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\BlogProject\settings.py changed, reloading.
+INFO 2026-05-29 22:12:38,217 autoreload 19324 8752 Watching for file changes with StatReloader
+INFO 2026-05-29 22:12:41,845 autoreload 19324 8752 C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\BlogProject\settings.py changed, reloading.
+INFO 2026-05-29 22:12:43,324 autoreload 15632 17108 Watching for file changes with StatReloader
+INFO 2026-05-29 22:12:46,863 autoreload 15632 17108 C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\BlogProject\settings.py changed, reloading.
+INFO 2026-05-29 22:12:47,995 autoreload 19188 14356 Watching for file changes with StatReloader
+INFO 2026-05-29 22:12:53,803 autoreload 19188 14356 C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\BlogProject\settings.py changed, reloading.
+INFO 2026-05-29 22:12:54,976 autoreload 6332 11388 Watching for file changes with StatReloader
+INFO 2026-05-29 22:12:59,882 autoreload 6332 11388 C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\BlogProject\settings.py changed, reloading.
+INFO 2026-05-29 22:13:01,265 autoreload 14648 16936 Watching for file changes with StatReloader
+INFO 2026-05-29 22:13:04,033 autoreload 14648 16936 C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\BlogProject\settings.py changed, reloading.
+INFO 2026-05-29 22:13:06,073 autoreload 18864 17920 Watching for file changes with StatReloader
+INFO 2026-05-29 22:13:09,664 autoreload 18864 17920 C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\BlogProject\settings.py changed, reloading.
+INFO 2026-05-29 22:13:11,266 autoreload 9248 4308 Watching for file changes with StatReloader
+INFO 2026-05-29 22:38:33,236 basehttp 9248 5960 "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-05-29 22:38:33,527 basehttp 9248 5960 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+INFO 2026-05-29 22:38:41,607 basehttp 9248 5960 "GET /register/ HTTP/1.1" 200 5533
+INFO 2026-05-29 22:38:44,306 basehttp 9248 5960 "GET /login/ HTTP/1.1" 200 3999
+INFO 2026-05-29 22:38:46,536 basehttp 9248 5960 "GET /register/ HTTP/1.1" 200 5533
+INFO 2026-05-29 22:38:48,467 basehttp 9248 5960 "GET / HTTP/1.1" 200 13924
+INFO 2026-05-29 22:39:59,317 basehttp 9248 5960 "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-05-29 22:39:59,334 basehttp 9248 5960 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+INFO 2026-05-29 22:41:34,604 basehttp 9248 17544 "GET /register/ HTTP/1.1" 200 5533
+INFO 2026-05-29 22:43:02,514 basehttp 9248 17544 "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-05-29 22:43:02,538 basehttp 9248 17544 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+INFO 2026-05-29 22:43:23,895 basehttp 9248 17544 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4348
+INFO 2026-05-29 22:43:40,142 basehttp 9248 17544 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4348
+INFO 2026-05-29 22:44:17,976 basehttp 9248 17544 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2026-05-29 22:44:18,036 basehttp 9248 17544 "GET /admin/ HTTP/1.1" 200 17975
+INFO 2026-05-29 22:44:18,199 basehttp 9248 17544 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2026-05-29 22:44:18,223 basehttp 9248 17544 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2026-05-29 22:44:18,228 basehttp 9248 6332 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2026-05-29 22:44:18,237 basehttp 9248 1392 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2026-05-29 22:44:25,769 basehttp 9248 1392 "GET / HTTP/1.1" 200 14584
+INFO 2026-05-29 22:44:25,814 basehttp 9248 6332 "GET /media/posts/meri.jpeg HTTP/1.1" 200 95842
+INFO 2026-05-29 22:44:25,821 basehttp 9248 1392 "GET /media/posts/screen.png HTTP/1.1" 200 704278
+INFO 2026-05-29 22:44:30,625 basehttp 9248 1392 "GET /profile/maram_master/ HTTP/1.1" 200 7453
+INFO 2026-05-29 22:44:43,324 basehttp 9248 1392 "GET /post/post-no-1-what-is-django/ HTTP/1.1" 200 9328
+INFO 2026-05-29 22:44:50,214 services 9248 1392 Post 'Post1 What is Django?' liked by maram_master
+INFO 2026-05-29 22:44:50,217 views 9248 1392 Post post-no-1-what-is-django liked by maram_master
+INFO 2026-05-29 22:44:50,219 basehttp 9248 1392 "POST /post/post-no-1-what-is-django/like/ HTTP/1.1" 200 54
+INFO 2026-05-29 22:44:50,778 services 9248 1392 Post 'Post1 What is Django?' unliked by maram_master
+INFO 2026-05-29 22:44:50,780 views 9248 1392 Post post-no-1-what-is-django unliked by maram_master
+INFO 2026-05-29 22:44:50,781 basehttp 9248 1392 "POST /post/post-no-1-what-is-django/like/ HTTP/1.1" 200 55
+INFO 2026-05-29 22:44:52,050 basehttp 9248 1392 "GET / HTTP/1.1" 200 14584
+INFO 2026-05-29 22:45:06,026 basehttp 9248 1392 "GET /profile/maram_master/ HTTP/1.1" 200 7453
+INFO 2026-05-29 22:45:25,274 basehttp 9248 1392 "GET /post/post-no-1-what-is-django/ HTTP/1.1" 200 9328
+INFO 2026-05-29 22:45:29,464 basehttp 9248 1392 "GET / HTTP/1.1" 200 14584
+INFO 2026-05-29 22:45:37,009 services 9248 1392 Post 'This post 1 from user sandi' liked by maram_master
+INFO 2026-05-29 22:45:37,011 views 9248 1392 Post this-post-1-from-user-sandi liked by maram_master
+INFO 2026-05-29 22:45:37,012 basehttp 9248 1392 "POST /post/this-post-1-from-user-sandi/like/ HTTP/1.1" 200 54
+INFO 2026-05-29 22:45:38,738 services 9248 1392 Post 'This post 1 from user sandi' unliked by maram_master
+INFO 2026-05-29 22:45:38,739 views 9248 1392 Post this-post-1-from-user-sandi unliked by maram_master
+INFO 2026-05-29 22:45:38,740 basehttp 9248 1392 "POST /post/this-post-1-from-user-sandi/like/ HTTP/1.1" 200 55
+INFO 2026-05-29 22:45:41,392 services 9248 1392 Post 'This post 1 from user sandi' liked by maram_master
+INFO 2026-05-29 22:45:41,393 views 9248 1392 Post this-post-1-from-user-sandi liked by maram_master
+INFO 2026-05-29 22:45:41,394 basehttp 9248 1392 "POST /post/this-post-1-from-user-sandi/like/ HTTP/1.1" 200 54
+INFO 2026-05-29 22:45:43,467 basehttp 9248 1392 "GET /post/this-post-1-from-user-sandi/ HTTP/1.1" 200 9157
+INFO 2026-05-29 22:45:51,000 basehttp 9248 1392 "GET /post/post-no-1-what-is-django/ HTTP/1.1" 200 9328
+INFO 2026-05-29 22:45:55,651 basehttp 9248 1392 "GET / HTTP/1.1" 200 14607
+INFO 2026-05-29 22:46:00,713 basehttp 9248 1392 "GET /profile/maram_master/ HTTP/1.1" 200 7453
+INFO 2026-05-29 22:46:04,116 basehttp 9248 1392 "GET /post/post-no-1-what-is-django/edit/ HTTP/1.1" 200 7582
+INFO 2026-05-29 22:46:56,837 views 9248 1392 Post 'Post1 What is Django?' updated by maram_master
+INFO 2026-05-29 22:46:56,849 basehttp 9248 1392 "POST /post/post-no-1-what-is-django/edit/ HTTP/1.1" 302 0
+INFO 2026-05-29 22:46:56,875 basehttp 9248 1392 "GET /post/post-no-1-what-is-django/ HTTP/1.1" 200 9665
+INFO 2026-05-29 22:47:03,141 basehttp 9248 1392 "GET /profile/maram_master/ HTTP/1.1" 200 7453
+INFO 2026-05-29 22:47:17,385 views 9248 1392 User maram_master logged out
+INFO 2026-05-29 22:47:17,400 basehttp 9248 1392 "GET /logout/ HTTP/1.1" 302 0
+INFO 2026-05-29 22:47:17,431 basehttp 9248 1392 "GET / HTTP/1.1" 200 14276
+INFO 2026-05-29 22:47:17,473 basehttp 9248 1392 "GET /media/posts/screen.png HTTP/1.1" 200 704278
+INFO 2026-05-29 22:48:16,533 basehttp 9248 1392 "GET /login/ HTTP/1.1" 200 3999
+WARNING 2026-05-29 22:48:19,803 views 9248 1392 Failed login attempt for username: None
+INFO 2026-05-29 22:48:19,806 basehttp 9248 1392 "POST /login/ HTTP/1.1" 200 4333
+INFO 2026-05-29 22:48:23,122 basehttp 9248 1392 "GET /register/ HTTP/1.1" 200 5533
+INFO 2026-05-29 22:48:25,428 basehttp 9248 1392 "GET / HTTP/1.1" 200 13947
+INFO 2026-05-29 22:48:25,464 basehttp 9248 1392 "GET /media/posts/meri.jpeg HTTP/1.1" 200 95842
+INFO 2026-05-29 22:48:27,581 basehttp 9248 1392 "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-05-29 22:48:27,594 basehttp 9248 1392 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+INFO 2026-05-29 22:48:49,106 basehttp 9248 1392 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2026-05-29 22:48:49,126 basehttp 9248 1392 "GET /admin/ HTTP/1.1" 200 17975
+INFO 2026-05-29 22:48:51,034 basehttp 9248 1392 "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2026-05-29 22:48:51,053 basehttp 9248 1392 "GET /admin/ HTTP/1.1" 200 17975
+INFO 2026-05-29 22:49:30,739 basehttp 9248 1392 "GET / HTTP/1.1" 200 14611
+INFO 2026-05-29 22:49:30,780 basehttp 9248 14484 "GET /media/posts/meri.jpeg HTTP/1.1" 200 95842
+INFO 2026-05-29 22:49:30,788 basehttp 9248 1392 "GET /media/posts/screen.png HTTP/1.1" 200 704278
+INFO 2026-05-29 22:49:39,388 basehttp 9248 1392 "GET /post/post-no-1-what-is-django/ HTTP/1.1" 200 9332
+WARNING 2026-05-29 22:49:54,361 log 9248 1392 Not Found: /post
+WARNING 2026-05-29 22:49:54,362 basehttp 9248 1392 "GET /post HTTP/1.1" 404 7501
+WARNING 2026-05-29 22:50:29,415 log 9248 1392 Not Found: /post/
+WARNING 2026-05-29 22:50:29,415 basehttp 9248 1392 "GET /post/ HTTP/1.1" 404 7504
+WARNING 2026-05-29 22:50:57,653 log 9248 1392 Not Found: /post/django-post/
+WARNING 2026-05-29 22:50:57,654 basehttp 9248 1392 "GET /post/django-post/ HTTP/1.1" 404 3343
+INFO 2026-05-29 23:34:52,137 basehttp 9248 12168 "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-05-29 23:34:52,167 basehttp 9248 12168 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+INFO 2026-05-29 23:34:52,244 basehttp 9248 11744 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2026-05-29 23:34:52,247 basehttp 9248 12168 "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2026-05-29 23:34:52,250 basehttp 9248 18332 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2026-05-29 23:34:52,250 basehttp 9248 16316 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2026-05-29 23:34:52,267 basehttp 9248 13396 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2026-05-29 23:34:52,353 basehttp 9248 18920 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2026-05-29 23:34:52,355 basehttp 9248 13396 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+WARNING 2026-05-29 23:34:52,437 log 9248 13396 Not Found: /favicon.ico
+WARNING 2026-05-29 23:34:52,438 basehttp 9248 13396 "GET /favicon.ico HTTP/1.1" 404 7522
+INFO 2026-05-29 23:39:20,812 basehttp 9248 13396 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2026-05-29 23:39:20,840 basehttp 9248 13396 "GET /admin/ HTTP/1.1" 200 17975
+INFO 2026-05-29 23:39:20,863 basehttp 9248 13396 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2026-05-29 23:39:20,889 basehttp 9248 18920 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2026-05-29 23:39:20,890 basehttp 9248 13396 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2026-05-29 23:39:20,891 basehttp 9248 16316 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2026-05-29 23:40:01,878 basehttp 9248 13396 "GET /admin/blog/post/ HTTP/1.1" 200 18981
+INFO 2026-05-29 23:40:01,920 basehttp 9248 13396 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2026-05-29 23:40:01,962 basehttp 9248 17180 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2026-05-29 23:40:01,972 basehttp 9248 16316 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-29 23:40:02,006 basehttp 9248 17180 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2026-05-29 23:40:02,006 basehttp 9248 13396 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2026-05-29 23:40:02,055 basehttp 9248 18508 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2026-05-29 23:40:02,069 basehttp 9248 16316 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2026-05-29 23:40:02,115 basehttp 9248 16268 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2026-05-29 23:40:02,138 basehttp 9248 18920 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2026-05-29 23:40:02,140 basehttp 9248 16268 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2026-05-29 23:40:02,190 basehttp 9248 18920 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2026-05-29 23:40:02,229 basehttp 9248 17180 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2026-05-29 23:40:02,267 basehttp 9248 17180 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2026-05-29 23:40:02,271 basehttp 9248 16268 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2026-05-29 23:40:02,272 basehttp 9248 18920 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2026-05-29 23:40:22,751 basehttp 9248 18920 "GET /admin/blog/post/?created_at__day=12&created_at__month=5&created_at__year=2026 HTTP/1.1" 200 19571
+INFO 2026-05-29 23:40:22,779 basehttp 9248 18920 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-29 23:40:24,812 basehttp 9248 18920 "GET /admin/blog/post/?created_at__month=5&created_at__year=2026 HTTP/1.1" 200 19839
+INFO 2026-05-29 23:40:24,829 basehttp 9248 18920 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-29 23:40:26,433 basehttp 9248 18920 "GET /admin/blog/post/?created_at__day=16&created_at__month=5&created_at__year=2026 HTTP/1.1" 200 19575
+INFO 2026-05-29 23:40:26,663 basehttp 9248 18920 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-29 23:40:33,012 basehttp 9248 18920 "GET /admin/blog/post/?created_at__month=5&created_at__year=2026 HTTP/1.1" 200 19839
+INFO 2026-05-29 23:40:33,029 basehttp 9248 18920 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-29 23:40:44,571 basehttp 9248 18920 "POST /admin/blog/post/?created_at__month=5&created_at__year=2026 HTTP/1.1" 302 0
+INFO 2026-05-29 23:40:44,605 basehttp 9248 18920 "GET /admin/blog/post/?created_at__month=5&created_at__year=2026 HTTP/1.1" 200 19964
+INFO 2026-05-29 23:40:44,629 basehttp 9248 18920 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-29 23:40:44,677 basehttp 9248 18920 "GET /static/admin/img/icon-alert.svg HTTP/1.1" 200 504
+INFO 2026-05-29 23:40:59,813 basehttp 9248 18920 "GET /admin/blog/post/?created_at__gte=2026-05-01+00%3A00%3A00%2B00%3A00&created_at__lt=2026-06-01+00%3A00%3A00%2B00%3A00 HTTP/1.1" 200 20838
+INFO 2026-05-29 23:40:59,833 basehttp 9248 18920 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-29 23:41:01,482 basehttp 9248 18920 "GET /admin/blog/post/?created_at__gte=2026-01-01+00%3A00%3A00%2B00%3A00&created_at__lt=2027-01-01+00%3A00%3A00%2B00%3A00 HTTP/1.1" 200 20838
+INFO 2026-05-29 23:41:01,497 basehttp 9248 18920 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-29 23:41:02,995 basehttp 9248 18920 "GET /admin/blog/post/? HTTP/1.1" 200 18981
+INFO 2026-05-29 23:41:03,017 basehttp 9248 18920 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-29 23:41:04,345 basehttp 9248 18920 "GET /admin/blog/post/?created_at__gte=2026-05-22+00%3A00%3A00%2B00%3A00&created_at__lt=2026-05-30+00%3A00%3A00%2B00%3A00 HTTP/1.1" 200 17363
+INFO 2026-05-29 23:41:04,362 basehttp 9248 18920 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-29 23:41:07,463 basehttp 9248 18920 "GET /admin/blog/post/?created_at__gte=2026-05-22+00%3A00%3A00%2B00%3A00&created_at__lt=2026-05-30+00%3A00%3A00%2B00%3A00&status__exact=0 HTTP/1.1" 200 17556
+INFO 2026-05-29 23:41:07,478 basehttp 9248 18920 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-29 23:41:09,010 basehttp 9248 18920 "GET /admin/blog/post/?created_at__gte=2026-05-22+00%3A00%3A00%2B00%3A00&created_at__lt=2026-05-30+00%3A00%3A00%2B00%3A00&status__exact=1 HTTP/1.1" 200 17556
+INFO 2026-05-29 23:41:09,029 basehttp 9248 18920 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-29 23:41:11,090 basehttp 9248 18920 "GET /admin/blog/post/?created_at__gte=2026-05-22+00%3A00%3A00%2B00%3A00&created_at__lt=2026-05-30+00%3A00%3A00%2B00%3A00&status__exact=1 HTTP/1.1" 200 17556
+INFO 2026-05-29 23:41:11,108 basehttp 9248 18920 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-29 23:41:12,853 basehttp 9248 18920 "GET /admin/blog/post/? HTTP/1.1" 200 18981
+INFO 2026-05-29 23:41:12,870 basehttp 9248 18920 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-29 23:41:14,162 basehttp 9248 18920 "GET /admin/blog/post/?status__exact=1 HTTP/1.1" 200 19551
+INFO 2026-05-29 23:41:14,181 basehttp 9248 18920 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-29 23:41:17,996 basehttp 9248 18920 "GET /admin/blog/post/?_facets=True&status__exact=1 HTTP/1.1" 200 19998
+INFO 2026-05-29 23:41:18,011 basehttp 9248 18920 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-29 23:41:18,059 basehttp 9248 18920 "GET /static/admin/img/icon-hidelink.svg HTTP/1.1" 200 784
+INFO 2026-05-29 23:41:19,037 basehttp 9248 18920 "GET /admin/blog/post/?status__exact=1 HTTP/1.1" 200 19551
+INFO 2026-05-29 23:41:19,054 basehttp 9248 18920 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-29 23:41:19,988 basehttp 9248 18920 "GET /admin/blog/post/?_facets=True&status__exact=1 HTTP/1.1" 200 19998
+INFO 2026-05-29 23:41:20,008 basehttp 9248 18920 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-29 23:41:21,543 basehttp 9248 18920 "GET /admin/blog/post/?status__exact=1 HTTP/1.1" 200 19551
+INFO 2026-05-29 23:41:21,561 basehttp 9248 18920 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-29 23:41:28,197 basehttp 9248 18920 "GET /admin/blog/like/ HTTP/1.1" 200 18307
+INFO 2026-05-29 23:41:28,215 basehttp 9248 18920 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2026-05-29 23:45:44,519 log 9248 18920 Not Found: /post/<slug>/
+WARNING 2026-05-29 23:45:44,524 basehttp 9248 18920 "GET /post/%3Cslug%3E/ HTTP/1.1" 404 7541
+WARNING 2026-05-29 23:46:05,666 log 9248 18920 Not Found: /post/first/
+WARNING 2026-05-29 23:46:05,667 basehttp 9248 18920 "GET /post/first/ HTTP/1.1" 404 3325
+WARNING 2026-05-29 23:46:20,431 log 9248 18920 Not Found: /post/Delete/
+WARNING 2026-05-29 23:46:20,432 basehttp 9248 18920 "GET /post/Delete/ HTTP/1.1" 404 3328
+WARNING 2026-05-29 23:46:38,499 log 9248 18920 Not Found: /post/api/
+WARNING 2026-05-29 23:46:38,500 basehttp 9248 18920 "GET /post/api/ HTTP/1.1" 404 3319
+INFO 2026-05-29 23:46:50,564 basehttp 9248 18920 "GET /api/ HTTP/1.1" 200 6000
+INFO 2026-05-29 23:46:50,593 basehttp 9248 16752 "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3385
+INFO 2026-05-29 23:46:50,603 basehttp 9248 18920 "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+INFO 2026-05-29 23:46:50,617 basehttp 9248 19428 "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+INFO 2026-05-29 23:46:50,622 basehttp 9248 17992 "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+INFO 2026-05-29 23:46:50,661 basehttp 9248 16752 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1719
+INFO 2026-05-29 23:46:50,672 basehttp 9248 17992 "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2026-05-29 23:46:50,703 basehttp 9248 10472 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3597
+INFO 2026-05-29 23:46:50,707 basehttp 9248 18920 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2026-05-29 23:46:50,716 basehttp 9248 19428 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2026-05-29 23:46:50,719 basehttp 9248 16752 "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+INFO 2026-05-29 23:46:50,780 basehttp 9248 15828 "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1" 200 89476
+INFO 2026-05-29 23:47:10,754 basehttp 9248 15828 "GET /api/posts/ HTTP/1.1" 200 17508
+INFO 2026-05-29 23:47:10,936 basehttp 9248 15828 "GET /static/rest_framework/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 200 18028
+INFO 2026-05-29 23:47:12,498 basehttp 9248 15828 "GET /api/comments/ HTTP/1.1" 200 14788
+INFO 2026-05-29 23:47:13,599 basehttp 9248 15828 "GET /api/categories/ HTTP/1.1" 200 7758
+INFO 2026-05-29 23:47:14,914 basehttp 9248 15828 "GET /api/likes/ HTTP/1.1" 200 13330
+INFO 2026-05-29 23:55:23,239 autoreload 9248 4308 C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\blog\models.py changed, reloading.
+INFO 2026-05-29 23:55:25,755 autoreload 18712 15232 Watching for file changes with StatReloader
+INFO 2026-05-30 01:00:02,125 autoreload 15564 3820 Watching for file changes with StatReloader
+INFO 2026-05-30 01:02:16,528 basehttp 15564 15276 "GET / HTTP/1.1" 200 14611
+INFO 2026-05-30 01:02:38,017 services 15564 15276 Post 'This post 1 from user sandi' unliked by maram_master
+INFO 2026-05-30 01:02:38,018 views 15564 15276 Post this-post-1-from-user-sandi unliked by maram_master
+INFO 2026-05-30 01:02:38,020 basehttp 15564 15276 "POST /post/this-post-1-from-user-sandi/like/ HTTP/1.1" 200 55
+INFO 2026-05-30 01:02:38,546 services 15564 15276 Post 'This post 1 from user sandi' liked by maram_master
+INFO 2026-05-30 01:02:38,547 views 15564 15276 Post this-post-1-from-user-sandi liked by maram_master
+INFO 2026-05-30 01:02:38,548 basehttp 15564 15276 "POST /post/this-post-1-from-user-sandi/like/ HTTP/1.1" 200 54
+INFO 2026-05-30 01:02:43,254 basehttp 15564 15276 "GET / HTTP/1.1" 200 14611
+INFO 2026-05-30 01:02:46,487 basehttp 15564 15276 "GET /profile/maram_master/ HTTP/1.1" 200 7453
+INFO 2026-05-30 01:02:51,086 basehttp 15564 15276 "GET / HTTP/1.1" 200 14611
+INFO 2026-05-30 01:02:56,484 basehttp 15564 15276 "GET /post/this-post-1-from-user-sandi/ HTTP/1.1" 200 9157
+INFO 2026-05-30 01:03:43,115 basehttp 15564 15276 "GET /profile/maram_master/ HTTP/1.1" 200 7453
+WARNING 2026-05-30 01:03:49,621 log 15564 15276 Not Found: /profile/edit/
+WARNING 2026-05-30 01:03:49,622 basehttp 15564 15276 "GET /profile/edit/ HTTP/1.1" 404 5746
+INFO 2026-05-30 01:05:50,652 basehttp 15564 15276 "GET /admin HTTP/1.1" 301 0
+INFO 2026-05-30 01:05:50,702 basehttp 15564 13248 "GET /admin/ HTTP/1.1" 200 17975
+INFO 2026-05-30 01:06:10,828 basehttp 15564 13248 "GET /admin/socialaccount/socialaccount/ HTTP/1.1" 200 15110
+INFO 2026-05-30 01:06:10,878 basehttp 15564 2576 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:06:11,158 basehttp 15564 14432 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2026-05-30 01:06:11,163 basehttp 15564 14432 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2026-05-30 01:06:11,167 basehttp 15564 13248 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2026-05-30 01:06:11,173 basehttp 15564 14432 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2026-05-30 01:06:11,179 basehttp 15564 16916 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2026-05-30 01:06:11,184 basehttp 15564 2576 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2026-05-30 01:06:11,190 basehttp 15564 13248 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2026-05-30 01:06:11,193 basehttp 15564 14432 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2026-05-30 01:06:11,199 basehttp 15564 15744 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2026-05-30 01:06:11,219 basehttp 15564 19056 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2026-05-30 01:06:11,248 basehttp 15564 15744 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2026-05-30 01:06:11,269 basehttp 15564 15744 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2026-05-30 01:06:11,270 basehttp 15564 19056 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2026-05-30 01:06:17,451 basehttp 15564 19056 "GET /admin/account/emailaddress/ HTTP/1.1" 200 15481
+INFO 2026-05-30 01:06:17,487 basehttp 15564 19056 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:06:20,146 basehttp 15564 19056 "GET /admin/authtoken/tokenproxy/ HTTP/1.1" 200 14107
+INFO 2026-05-30 01:06:22,400 basehttp 15564 19056 "GET /admin/auth/group/ HTTP/1.1" 200 14475
+INFO 2026-05-30 01:06:22,435 basehttp 15564 19056 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:06:23,974 basehttp 15564 19056 "GET /admin/auth/user/ HTTP/1.1" 200 22250
+INFO 2026-05-30 01:06:24,009 basehttp 15564 19056 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:06:24,027 basehttp 15564 15744 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2026-05-30 01:06:24,028 basehttp 15564 13248 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2026-05-30 01:06:24,081 basehttp 15564 13248 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2026-05-30 01:06:45,998 basehttp 15564 13248 "POST /admin/auth/user/ HTTP/1.1" 200 14498
+INFO 2026-05-30 01:06:46,200 basehttp 15564 13248 "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+INFO 2026-05-30 01:06:49,350 basehttp 15564 13248 "POST /admin/auth/user/ HTTP/1.1" 302 0
+INFO 2026-05-30 01:06:49,593 basehttp 15564 13248 "GET /admin/auth/user/ HTTP/1.1" 200 20963
+INFO 2026-05-30 01:06:49,702 basehttp 15564 13248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:07:15,882 basehttp 15564 13248 "GET /admin/auth/user/?q=maram HTTP/1.1" 200 19400
+INFO 2026-05-30 01:07:15,922 basehttp 15564 13248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:07:23,447 basehttp 15564 13248 "GET /admin/auth/user/?o=&q=maram HTTP/1.1" 200 19279
+INFO 2026-05-30 01:07:23,487 basehttp 15564 13248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:07:25,202 basehttp 15564 13248 "GET /admin/auth/user/?o=1&q=maram HTTP/1.1" 200 19558
+INFO 2026-05-30 01:07:25,236 basehttp 15564 13248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:07:30,147 basehttp 15564 13248 "GET /admin/auth/user/?o=&q=maram HTTP/1.1" 200 19279
+INFO 2026-05-30 01:07:30,182 basehttp 15564 13248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:07:33,382 basehttp 15564 13248 "GET /admin/auth/user/?o=2&q=maram HTTP/1.1" 200 19558
+INFO 2026-05-30 01:07:33,420 basehttp 15564 13248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:07:34,542 basehttp 15564 13248 "GET /admin/auth/user/?o=-2&q=maram HTTP/1.1" 200 19577
+INFO 2026-05-30 01:07:34,606 basehttp 15564 13248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:07:35,444 basehttp 15564 13248 "GET /admin/auth/user/?o=2&q=maram HTTP/1.1" 200 19558
+INFO 2026-05-30 01:07:35,480 basehttp 15564 13248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:07:39,446 basehttp 15564 13248 "GET /admin/auth/user/?o=-2&q=maram HTTP/1.1" 200 19577
+INFO 2026-05-30 01:07:39,484 basehttp 15564 13248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:07:40,790 basehttp 15564 13248 "GET /admin/auth/user/?o=1.-2&q=maram HTTP/1.1" 200 20005
+INFO 2026-05-30 01:07:40,830 basehttp 15564 13248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:07:42,040 basehttp 15564 13248 "GET /admin/auth/user/?o=-1.-2&q=maram HTTP/1.1" 200 20026
+INFO 2026-05-30 01:07:42,077 basehttp 15564 13248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:08:20,794 basehttp 15564 13248 "GET /admin/auth/user/17/change/?_changelist_filters=o%3D-1.-2%26q%3Dmaram HTTP/1.1" 200 32028
+INFO 2026-05-30 01:08:20,849 basehttp 15564 2576 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:08:20,857 basehttp 15564 13248 "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2026-05-30 01:08:20,894 basehttp 15564 15744 "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2026-05-30 01:08:20,895 basehttp 15564 14432 "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2026-05-30 01:08:20,896 basehttp 15564 16916 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15845
+INFO 2026-05-30 01:08:20,897 basehttp 15564 19056 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2026-05-30 01:08:20,907 basehttp 15564 2576 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2026-05-30 01:08:20,967 basehttp 15564 2576 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11973
+INFO 2026-05-30 01:08:20,978 basehttp 15564 19056 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2026-05-30 01:08:21,259 basehttp 15564 14432 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2026-05-30 01:08:21,259 basehttp 15564 2576 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2026-05-30 01:08:21,260 basehttp 15564 19056 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2026-05-30 01:09:23,154 basehttp 15564 19056 "GET /admin/auth/user/17/password/ HTTP/1.1" 200 15623
+INFO 2026-05-30 01:09:23,204 basehttp 15564 19056 "GET /static/admin/css/unusable_password_field.css HTTP/1.1" 200 663
+INFO 2026-05-30 01:09:23,224 basehttp 15564 14432 "GET /static/admin/js/unusable_password_field.js HTTP/1.1" 200 1480
+INFO 2026-05-30 01:11:01,440 basehttp 15564 14432 "POST /admin/auth/user/17/password/ HTTP/1.1" 302 0
+INFO 2026-05-30 01:11:01,492 basehttp 15564 14432 "GET /admin/auth/user/17/change/ HTTP/1.1" 200 32028
+INFO 2026-05-30 01:11:01,540 basehttp 15564 14432 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:11:14,720 basehttp 15564 14432 "POST /admin/auth/user/17/change/ HTTP/1.1" 302 0
+INFO 2026-05-30 01:11:14,751 basehttp 15564 14432 "GET /admin/auth/user/ HTTP/1.1" 200 21022
+INFO 2026-05-30 01:11:14,800 basehttp 15564 14432 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:11:18,287 basehttp 15564 14432 "GET /admin/auth/user/add/ HTTP/1.1" 200 18739
+INFO 2026-05-30 01:11:18,322 basehttp 15564 14432 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:11:20,879 basehttp 15564 14432 "GET /admin/auth/user/ HTTP/1.1" 200 20828
+INFO 2026-05-30 01:20:05,505 basehttp 15564 10292 "GET /admin/blog/post/add/ HTTP/1.1" 200 23832
+INFO 2026-05-30 01:20:05,545 basehttp 15564 10292 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:20:08,228 basehttp 15564 10292 "GET /admin/blog/category/ HTTP/1.1" 200 15638
+INFO 2026-05-30 01:20:08,267 basehttp 15564 10292 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:20:11,054 basehttp 15564 10292 "GET /admin/blog/post/add/ HTTP/1.1" 200 23832
+INFO 2026-05-30 01:20:11,118 basehttp 15564 10292 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:20:53,406 basehttp 15564 10292 "GET /admin/blog/post/Post1%20What%20is%20Django? HTTP/1.1" 301 0
+INFO 2026-05-30 01:20:53,414 basehttp 15564 10292 "GET /admin/blog/post/Post1%20What%20is%20Django/ HTTP/1.1" 302 0
+INFO 2026-05-30 01:20:53,430 basehttp 15564 10292 "GET /admin/blog/post/Post1%20What%20is%20Django/change/ HTTP/1.1" 302 0
+INFO 2026-05-30 01:20:53,459 basehttp 15564 10292 "GET /admin/ HTTP/1.1" 200 18205
+INFO 2026-05-30 01:20:53,578 basehttp 15564 10292 "GET /static/admin/img/icon-alert.svg HTTP/1.1" 200 504
+INFO 2026-05-30 01:21:03,905 basehttp 15564 10292 "GET /admin/blog/post/ HTTP/1.1" 200 18981
+INFO 2026-05-30 01:21:03,947 basehttp 15564 10292 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:21:09,853 basehttp 15564 10292 "GET /admin/blog/post/11/change/ HTTP/1.1" 200 24991
+INFO 2026-05-30 01:21:09,891 basehttp 15564 10292 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:21:23,660 basehttp 15564 10292 "GET /admin/blog/post/1/ HTTP/1.1" 302 0
+INFO 2026-05-30 01:21:23,676 basehttp 15564 10292 "GET /admin/blog/post/1/change/ HTTP/1.1" 302 0
+INFO 2026-05-30 01:21:23,711 basehttp 15564 10292 "GET /admin/ HTTP/1.1" 200 18186
+INFO 2026-05-30 01:21:37,362 basehttp 15564 10292 "GET /admin/auth/user/17/change/ HTTP/1.1" 200 31892
+INFO 2026-05-30 01:21:37,406 basehttp 15564 10292 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 01:23:35,603 basehttp 15564 10292 "GET /admin/ HTTP/1.1" 200 18019
+INFO 2026-05-30 01:23:38,538 basehttp 15564 10292 "GET / HTTP/1.1" 200 14611
+INFO 2026-05-30 01:23:38,583 basehttp 15564 1508 "GET /media/posts/meri.jpeg HTTP/1.1" 200 95842
+INFO 2026-05-30 01:23:38,588 basehttp 15564 10292 "GET /media/posts/screen.png HTTP/1.1" 200 704278
+INFO 2026-05-30 01:28:01,858 views 15564 8264 Post 'Post 02. How to develop your skills ?' created by maram_master
+INFO 2026-05-30 01:28:01,870 basehttp 15564 8264 "POST / HTTP/1.1" 302 0
+INFO 2026-05-30 01:28:01,909 basehttp 15564 8264 "GET / HTTP/1.1" 200 17202
+INFO 2026-05-30 01:28:45,552 services 15564 8264 Post 'Post 02. How to develop your skills ?' liked by maram_master
+INFO 2026-05-30 01:28:45,553 views 15564 8264 Post post-02-how-to-develop-your-skills liked by maram_master
+INFO 2026-05-30 01:28:45,554 basehttp 15564 8264 "POST /post/post-02-how-to-develop-your-skills/like/ HTTP/1.1" 200 54
+INFO 2026-05-30 01:28:46,993 services 15564 8264 Post 'Post 02. How to develop your skills ?' unliked by maram_master
+INFO 2026-05-30 01:28:46,994 views 15564 8264 Post post-02-how-to-develop-your-skills unliked by maram_master
+INFO 2026-05-30 01:28:46,995 basehttp 15564 8264 "POST /post/post-02-how-to-develop-your-skills/like/ HTTP/1.1" 200 55
+INFO 2026-05-30 01:28:48,975 services 15564 8264 Post 'Post 02. How to develop your skills ?' liked by maram_master
+INFO 2026-05-30 01:28:48,976 views 15564 8264 Post post-02-how-to-develop-your-skills liked by maram_master
+INFO 2026-05-30 01:28:48,977 basehttp 15564 8264 "POST /post/post-02-how-to-develop-your-skills/like/ HTTP/1.1" 200 54
+INFO 2026-05-30 01:30:22,875 basehttp 15564 8264 "GET /post/post-02-how-to-develop-your-skills/ HTTP/1.1" 200 9303
+INFO 2026-05-30 01:51:57,018 basehttp 15564 15984 "GET /admin/ HTTP/1.1" 200 18019
+INFO 2026-05-30 01:51:58,740 basehttp 15564 15984 "GET / HTTP/1.1" 200 16583
+INFO 2026-05-30 01:51:59,083 basehttp 15564 4812 "GET /media/posts/meri.jpeg HTTP/1.1" 200 95842
+INFO 2026-05-30 01:51:59,091 basehttp 15564 15984 "GET /media/posts/screen.png HTTP/1.1" 200 704278
+INFO 2026-05-30 01:53:30,301 basehttp 15564 15984 "GET / HTTP/1.1" 200 16748
+INFO 2026-05-30 01:58:31,945 basehttp 15564 19056 "GET / HTTP/1.1" 200 16595
+INFO 2026-05-30 01:58:46,681 basehttp 15564 19056 "GET / HTTP/1.1" 200 15977
+INFO 2026-05-30 01:59:23,273 basehttp 15564 19056 "GET / HTTP/1.1" 200 16010
+INFO 2026-05-30 02:05:58,851 basehttp 15564 15908 "GET / HTTP/1.1" 200 19379
+INFO 2026-05-30 02:06:15,258 basehttp 15564 15908 "GET /post/this-post-1-from-user-sandi/ HTTP/1.1" 200 9157
+INFO 2026-05-30 02:07:44,636 services 15564 15908 Post 'Post 02. How to develop your skills ?' unliked by maram_master
+INFO 2026-05-30 02:07:44,638 views 15564 15908 Post post-02-how-to-develop-your-skills unliked by maram_master
+INFO 2026-05-30 02:07:44,639 basehttp 15564 15908 "POST /post/post-02-how-to-develop-your-skills/like/ HTTP/1.1" 200 55
+INFO 2026-05-30 02:07:48,541 services 15564 15908 Post 'Post 02. How to develop your skills ?' liked by maram_master
+INFO 2026-05-30 02:07:48,543 views 15564 15908 Post post-02-how-to-develop-your-skills liked by maram_master
+INFO 2026-05-30 02:07:48,544 basehttp 15564 15908 "POST /post/post-02-how-to-develop-your-skills/like/ HTTP/1.1" 200 54
+INFO 2026-05-30 02:07:49,181 services 15564 15908 Post 'Post 02. How to develop your skills ?' unliked by maram_master
+INFO 2026-05-30 02:07:49,183 views 15564 15908 Post post-02-how-to-develop-your-skills unliked by maram_master
+INFO 2026-05-30 02:07:49,184 basehttp 15564 15908 "POST /post/post-02-how-to-develop-your-skills/like/ HTTP/1.1" 200 55
+INFO 2026-05-30 02:07:50,457 services 15564 15908 Post 'Post 02. How to develop your skills ?' liked by maram_master
+INFO 2026-05-30 02:07:50,458 views 15564 15908 Post post-02-how-to-develop-your-skills liked by maram_master
+INFO 2026-05-30 02:07:50,459 basehttp 15564 15908 "POST /post/post-02-how-to-develop-your-skills/like/ HTTP/1.1" 200 54
+INFO 2026-05-30 02:07:51,073 services 15564 15908 Post 'Post 02. How to develop your skills ?' unliked by maram_master
+INFO 2026-05-30 02:07:51,074 views 15564 15908 Post post-02-how-to-develop-your-skills unliked by maram_master
+INFO 2026-05-30 02:07:51,075 basehttp 15564 15908 "POST /post/post-02-how-to-develop-your-skills/like/ HTTP/1.1" 200 55
+INFO 2026-05-30 02:07:53,259 basehttp 15564 15908 "GET / HTTP/1.1" 200 19325
+INFO 2026-05-30 02:07:54,987 services 15564 15908 Post 'Post 02. How to develop your skills ?' liked by maram_master
+INFO 2026-05-30 02:07:54,989 views 15564 15908 Post post-02-how-to-develop-your-skills liked by maram_master
+INFO 2026-05-30 02:07:54,990 basehttp 15564 15908 "POST /post/post-02-how-to-develop-your-skills/like/ HTTP/1.1" 200 54
+INFO 2026-05-30 02:07:55,979 services 15564 15908 Post 'Post 02. How to develop your skills ?' unliked by maram_master
+INFO 2026-05-30 02:07:55,981 views 15564 15908 Post post-02-how-to-develop-your-skills unliked by maram_master
+INFO 2026-05-30 02:07:55,982 basehttp 15564 15908 "POST /post/post-02-how-to-develop-your-skills/like/ HTTP/1.1" 200 55
+INFO 2026-05-30 02:17:36,482 basehttp 15564 14788 "GET /register HTTP/1.1" 301 0
+INFO 2026-05-30 02:17:36,501 basehttp 15564 1040 "GET /register/ HTTP/1.1" 302 0
+INFO 2026-05-30 02:17:36,550 basehttp 15564 1040 "GET / HTTP/1.1" 200 19325
+INFO 2026-05-30 02:22:09,815 basehttp 15564 8972 "GET / HTTP/1.1" 200 19142
+INFO 2026-05-30 02:23:50,572 basehttp 15564 8972 "GET / HTTP/1.1" 200 19136
+INFO 2026-05-30 02:23:53,354 services 15564 8972 Post 'Post 02. How to develop your skills ?' liked by maram_master
+INFO 2026-05-30 02:23:53,356 views 15564 8972 Post post-02-how-to-develop-your-skills liked by maram_master
+INFO 2026-05-30 02:23:53,357 basehttp 15564 8972 "POST /post/post-02-how-to-develop-your-skills/like/ HTTP/1.1" 200 54
+INFO 2026-05-30 02:23:55,663 services 15564 8972 Post 'Post 02. How to develop your skills ?' unliked by maram_master
+INFO 2026-05-30 02:23:55,664 views 15564 8972 Post post-02-how-to-develop-your-skills unliked by maram_master
+INFO 2026-05-30 02:23:55,665 basehttp 15564 8972 "POST /post/post-02-how-to-develop-your-skills/like/ HTTP/1.1" 200 55
+INFO 2026-05-30 02:23:56,808 services 15564 8972 Post 'Post 02. How to develop your skills ?' liked by maram_master
+INFO 2026-05-30 02:23:56,810 views 15564 8972 Post post-02-how-to-develop-your-skills liked by maram_master
+INFO 2026-05-30 02:23:56,811 basehttp 15564 8972 "POST /post/post-02-how-to-develop-your-skills/like/ HTTP/1.1" 200 54
+INFO 2026-05-30 02:23:58,026 services 15564 8972 Post 'Post 02. How to develop your skills ?' unliked by maram_master
+INFO 2026-05-30 02:23:58,028 views 15564 8972 Post post-02-how-to-develop-your-skills unliked by maram_master
+INFO 2026-05-30 02:23:58,029 basehttp 15564 8972 "POST /post/post-02-how-to-develop-your-skills/like/ HTTP/1.1" 200 55
+INFO 2026-05-30 02:24:56,700 services 15564 8972 Post 'Post 02. How to develop your skills ?' liked by maram_master
+INFO 2026-05-30 02:24:56,701 views 15564 8972 Post post-02-how-to-develop-your-skills liked by maram_master
+INFO 2026-05-30 02:24:56,702 basehttp 15564 8972 "POST /post/post-02-how-to-develop-your-skills/like/ HTTP/1.1" 200 54
+INFO 2026-05-30 02:24:57,668 services 15564 8972 Post 'Post 02. How to develop your skills ?' unliked by maram_master
+INFO 2026-05-30 02:24:57,670 views 15564 8972 Post post-02-how-to-develop-your-skills unliked by maram_master
+INFO 2026-05-30 02:24:57,671 basehttp 15564 8972 "POST /post/post-02-how-to-develop-your-skills/like/ HTTP/1.1" 200 55
+INFO 2026-05-30 02:25:31,511 services 15564 8972 Post 'Post 02. How to develop your skills ?' liked by maram_master
+INFO 2026-05-30 02:25:31,512 views 15564 8972 Post post-02-how-to-develop-your-skills liked by maram_master
+INFO 2026-05-30 02:25:31,514 basehttp 15564 8972 "POST /post/post-02-how-to-develop-your-skills/like/ HTTP/1.1" 200 54
+INFO 2026-05-30 02:28:02,709 basehttp 15564 15804 "GET /post/post-02-how-to-develop-your-skills/ HTTP/1.1" 200 9303
+INFO 2026-05-30 02:28:13,490 services 15564 15804 Comment added to post 'Post 02. How to develop your skills ?' by maram_master
+INFO 2026-05-30 02:28:13,493 views 15564 15804 Comment added to post 'Post 02. How to develop your skills ?' by maram_master
+INFO 2026-05-30 02:28:13,503 basehttp 15564 15804 "POST /post/post-02-how-to-develop-your-skills/ HTTP/1.1" 302 0
+INFO 2026-05-30 02:28:13,536 basehttp 15564 15804 "GET /post/post-02-how-to-develop-your-skills/ HTTP/1.1" 200 9559
+INFO 2026-05-30 02:28:19,742 basehttp 15564 15804 "GET / HTTP/1.1" 200 19139
+INFO 2026-05-30 02:28:24,002 basehttp 15564 15804 "GET /post/post-02-how-to-develop-your-skills/ HTTP/1.1" 200 9225
+INFO 2026-05-30 02:28:39,503 basehttp 15564 15804 "GET /post/post-02-how-to-develop-your-skills/ HTTP/1.1" 200 9225
+INFO 2026-05-30 02:28:52,817 basehttp 15564 15804 "GET /post/post-02-how-to-develop-your-skills/ HTTP/1.1" 200 9225
+INFO 2026-05-30 02:29:06,449 services 15564 15804 Comment added to post 'Post 02. How to develop your skills ?' by maram_master
+INFO 2026-05-30 02:29:06,449 views 15564 15804 Comment added to post 'Post 02. How to develop your skills ?' by maram_master
+INFO 2026-05-30 02:29:06,459 basehttp 15564 15804 "POST /post/post-02-how-to-develop-your-skills/ HTTP/1.1" 302 0
+INFO 2026-05-30 02:29:06,491 basehttp 15564 15804 "GET /post/post-02-how-to-develop-your-skills/ HTTP/1.1" 200 10390
+INFO 2026-05-30 02:34:12,467 basehttp 15564 18200 "GET /post/post-02-how-to-develop-your-skills/ HTTP/1.1" 200 10056
+INFO 2026-05-30 02:34:18,391 basehttp 15564 18200 "GET / HTTP/1.1" 200 19140
+INFO 2026-05-30 02:34:23,927 basehttp 15564 18200 "GET /post/post-02-how-to-develop-your-skills/ HTTP/1.1" 200 10056
+INFO 2026-05-30 02:34:32,951 basehttp 15564 18200 "GET / HTTP/1.1" 200 19140
+INFO 2026-05-30 02:34:36,418 basehttp 15564 18200 "GET /profile/maram_master/ HTTP/1.1" 200 9651
+INFO 2026-05-30 02:35:06,490 basehttp 15564 18200 "GET /api/ HTTP/1.1" 200 6000
+INFO 2026-05-30 02:35:15,786 basehttp 15564 18200 "OPTIONS /api/ HTTP/1.1" 200 5856
+INFO 2026-05-30 02:35:20,286 basehttp 15564 18200 "OPTIONS /api/ HTTP/1.1" 200 5856
+INFO 2026-05-30 02:35:21,354 basehttp 15564 18200 "OPTIONS /api/ HTTP/1.1" 200 5856
+INFO 2026-05-30 02:35:22,849 basehttp 15564 18200 "GET /api/ HTTP/1.1" 200 6000
+INFO 2026-05-30 02:35:26,471 basehttp 15564 18200 "GET /api/?format=json HTTP/1.1" 200 237
+INFO 2026-05-30 02:35:43,830 basehttp 15564 18200 "GET /admin HTTP/1.1" 301 0
+INFO 2026-05-30 02:35:43,896 basehttp 15564 14116 "GET /admin/ HTTP/1.1" 200 18019
+INFO 2026-05-30 02:36:15,633 basehttp 15564 14116 "GET /admin/blog/post/ HTTP/1.1" 200 19585
+INFO 2026-05-30 02:36:15,685 basehttp 15564 14116 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 02:37:07,608 basehttp 15564 7324 "GET /admin/blog/post/ HTTP/1.1" 200 19585
+INFO 2026-05-30 02:37:07,660 basehttp 15564 7324 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 02:39:02,640 basehttp 15564 7324 "GET /admin/blog/post/add/ HTTP/1.1" 200 23832
+INFO 2026-05-30 02:39:02,685 basehttp 15564 7324 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 02:39:43,870 basehttp 15564 7324 "GET /admin/socialaccount/socialaccount/ HTTP/1.1" 200 15110
+INFO 2026-05-30 02:39:43,909 basehttp 15564 7324 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 02:39:45,875 basehttp 15564 7324 "GET /admin/socialaccount/socialtoken/ HTTP/1.1" 200 15894
+INFO 2026-05-30 02:39:45,912 basehttp 15564 7324 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 02:39:48,820 basehttp 15564 7324 "GET /admin/socialaccount/socialaccount/add/ HTTP/1.1" 200 17107
+INFO 2026-05-30 02:39:48,859 basehttp 15564 7324 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 02:39:56,100 basehttp 15564 7324 "GET /admin/socialaccount/socialtoken/add/ HTTP/1.1" 200 18537
+INFO 2026-05-30 02:39:56,135 basehttp 15564 7324 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 02:40:00,420 basehttp 15564 7324 "GET /admin/socialaccount/socialapp/add/ HTTP/1.1" 200 20979
+INFO 2026-05-30 02:40:00,463 basehttp 15564 7324 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-05-30 06:44:01,766 autoreload 15564 3820 C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\blog\api\urls.py changed, reloading.
+INFO 2026-05-30 06:44:04,558 autoreload 4540 20836 Watching for file changes with StatReloader
+INFO 2026-05-30 06:44:18,689 autoreload 4540 20836 C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\blog\api\auth_views.py changed, reloading.
+INFO 2026-05-30 06:44:19,687 autoreload 8352 21484 Watching for file changes with StatReloader
+INFO 2026-05-30 06:44:24,467 autoreload 8352 21484 C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\blog\api\auth_views.py changed, reloading.
+INFO 2026-05-30 06:44:25,509 autoreload 18796 18540 Watching for file changes with StatReloader
+INFO 2026-05-30 06:44:40,379 autoreload 18796 18540 C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\blog\api\auth_views.py changed, reloading.
+INFO 2026-05-30 06:44:41,425 autoreload 17024 19972 Watching for file changes with StatReloader
+INFO 2026-05-30 06:44:59,993 autoreload 17024 19972 C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\blog\api\auth_views.py changed, reloading.
+INFO 2026-05-30 06:45:01,056 autoreload 15908 19544 Watching for file changes with StatReloader
+INFO 2026-05-30 06:45:10,567 autoreload 15908 19544 C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\blog\api\urls.py changed, reloading.
+INFO 2026-05-30 06:45:13,336 autoreload 19692 22196 Watching for file changes with StatReloader
+INFO 2026-05-30 06:50:00,753 views 19692 15680 User maram_master logged out
+INFO 2026-05-30 06:50:00,804 basehttp 19692 15680 "GET /logout/ HTTP/1.1" 302 0
+INFO 2026-05-30 06:50:00,857 basehttp 19692 15680 "GET / HTTP/1.1" 200 18892
+INFO 2026-05-30 06:50:01,045 basehttp 19692 22368 "GET /media/posts/meri.jpeg HTTP/1.1" 200 95842
+INFO 2026-05-30 06:50:01,054 basehttp 19692 15680 "GET /media/posts/screen.png HTTP/1.1" 200 704278
+INFO 2026-05-30 06:50:05,947 basehttp 19692 15680 "GET /login/ HTTP/1.1" 200 3999
+INFO 2026-05-30 06:50:11,247 basehttp 19692 15680 "GET /login/ HTTP/1.1" 200 3999
+INFO 2026-05-30 06:56:36,045 basehttp 19692 17288 "GET /login/ HTTP/1.1" 200 4255
+INFO 2026-05-30 06:56:51,614 views 19692 17288 User maram_master logged in
+ERROR 2026-05-30 06:56:51,947 log 19692 17288 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\blog\views.py", line 391, in login_view
+    return redirect(request.GET.get('next', 'home'))
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\shortcuts.py", line 51, in redirect
+    resolve_url(to, *args, **kwargs),
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\shortcuts.py", line 184, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'home' not found. 'home' is not a valid view function or pattern name.
+ERROR 2026-05-30 06:56:51,953 basehttp 19692 17288 "POST /login/ HTTP/1.1" 500 96350
+INFO 2026-05-30 07:03:53,708 autoreload 19692 22196 C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\blog\views.py changed, reloading.
+INFO 2026-05-30 07:03:54,827 autoreload 20176 11120 Watching for file changes with StatReloader
+INFO 2026-05-30 07:03:57,667 autoreload 20176 11120 C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\blog\views.py changed, reloading.
+INFO 2026-05-30 07:03:58,705 autoreload 11808 10256 Watching for file changes with StatReloader
+INFO 2026-05-30 07:04:01,071 autoreload 11808 10256 C:\Users\Maram\Desktop\S2\Web application development\BlogApplication\blog\views.py changed, reloading.
+INFO 2026-05-30 07:04:02,118 autoreload 20800 18284 Watching for file changes with StatReloader
+WARNING 2026-05-30 07:04:18,367 basehttp 20800 18484 "POST /login/ HTTP/1.1" 403 2503
+WARNING 2026-05-30 07:04:28,337 basehttp 20800 18484 "POST /login/ HTTP/1.1" 403 2503
+INFO 2026-05-30 07:04:30,853 basehttp 20800 18484 "GET /login/ HTTP/1.1" 200 4255
+INFO 2026-05-30 07:04:41,473 views 20800 18484 User maram_master logged in
+INFO 2026-05-30 07:04:41,481 basehttp 20800 18484 "POST /login/ HTTP/1.1" 302 0
+INFO 2026-05-30 07:04:41,520 basehttp 20800 18484 "GET / HTTP/1.1" 200 19474
+INFO 2026-05-30 07:04:41,683 basehttp 20800 18484 "GET /media/posts/screen.png HTTP/1.1" 200 704278
+INFO 2026-05-30 07:04:41,715 basehttp 20800 21704 "GET /media/posts/meri.jpeg HTTP/1.1" 200 95842
+INFO 2026-05-30 07:05:00,315 views 20800 21704 User maram_master logged out
+INFO 2026-05-30 07:05:00,324 basehttp 20800 21704 "GET /logout/ HTTP/1.1" 302 0
+INFO 2026-05-30 07:05:00,352 basehttp 20800 21704 "GET / HTTP/1.1" 200 18892
+INFO 2026-05-30 07:05:03,218 basehttp 20800 21704 "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-05-30 07:05:03,255 basehttp 20800 21704 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+INFO 2026-05-30 07:05:29,257 basehttp 20800 21704 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2026-05-30 07:05:29,286 basehttp 20800 21704 "GET /admin/ HTTP/1.1" 200 18019
+INFO 2026-05-30 07:05:36,971 basehttp 20800 21704 "GET /admin/ HTTP/1.1" 200 18019
+INFO 2026-05-30 07:05:40,330 basehttp 20800 21704 "GET / HTTP/1.1" 200 19140
+INFO 2026-05-30 07:05:40,380 basehttp 20800 18484 "GET /media/posts/meri.jpeg HTTP/1.1" 200 95842
+INFO 2026-05-30 07:05:40,385 basehttp 20800 21704 "GET /media/posts/screen.png HTTP/1.1" 200 704278

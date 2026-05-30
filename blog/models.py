@@ -5,7 +5,7 @@ from django.utils.text import slugify
 
 class Category(models.Model):
     """
-    ✅ فئات المنشورات - تنظيم المحتوى
+     فئات المنشورات - تنظيم المحتوى
     (Blog post category for organizing content)
     """
     
@@ -21,7 +21,7 @@ class Category(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
-        """✅ إنشاء slug تلقائياً من الاسم (Auto-generate slug from name)"""
+        """ إنشاء slug تلقائياً من الاسم (Auto-generate slug from name)"""
         if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
@@ -29,7 +29,7 @@ class Category(models.Model):
 
 class Post(models.Model):
     """
-    ✅ نموذج المنشورات - المحتوى الرئيسي للمدونة
+     نموذج المنشورات - المحتوى الرئيسي للمدونة
     (Blog post model with full publication features)
     """
     
@@ -104,7 +104,7 @@ class Post(models.Model):
 
 class Comment(models.Model):
     """
-    ✅ التعليقات - تفاعل القراء مع المنشورات
+     التعليقات - تفاعل القراء مع المنشورات
     (User comments on blog posts)
     """
     
@@ -134,7 +134,7 @@ class Comment(models.Model):
 
 class Like(models.Model):
     """
-    ✅ الإعجابات - تفاعل المستخدمين مع المنشورات
+     الإعجابات - تفاعل المستخدمين مع المنشورات
     (User likes on blog posts)
     """
     

@@ -388,7 +388,7 @@ def login_view(request):
             login(request, user)
             messages.success(request, f"Welcome back, {user.username}!")
             logger.info(f"User {user.username} logged in")
-            return redirect(request.GET.get('next', 'home'))
+            return redirect(request.GET.get('next', 'blog:home'))
         else:
             messages.error(request, "Invalid username or password.")
             logger.warning(f"Failed login attempt for username: {username}")

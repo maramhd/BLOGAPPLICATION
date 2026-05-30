@@ -5,7 +5,7 @@
   body       { font-family: "Roboto", sans-serif; font-size: 18px; background-color: #f0f2f5; }
   .card      { box-shadow: 0 1px 3px rgba(0,0,0,.15); border-radius: 12px; border: none; }
 
-  /* ── Quick-Post Box (Facebook-style) ── */
+  /* ── Quick-Post Box ── */
   .quick-post-box {
     background: #fff;
     border-radius: 12px;
@@ -64,7 +64,7 @@
   .post-card .post-title   { font-size: 17px; font-weight: 700; color: #050505; padding: 12px 18px 4px; }
   .post-card .post-content { font-size: 15px; color: #3c3c3c; padding: 0 18px 12px; }
 
-  /* ── Like bar ── */
+  /* ── Like bar (أصلي، احتفظنا به للأمان) ── */
   .like-bar {
     border-top: 1px solid #e4e6eb;
     padding: 4px 8px;
@@ -98,6 +98,53 @@
     text-decoration: none;
   }
   .btn-read:hover { background: #f0f2f5; color: #050505; }
+
+  /* ── تحسينات الشريط السفلي الجديد (المضافة) ── */
+  .post-footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 18px;
+    border-top: 1px solid #e4e6eb;
+    margin-top: 8px;
+  }
+
+  .like-read-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* زر Like المدمج مع العدد */
+  .btn-like-combined {
+    background: none;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #65676b;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.15s;
+  }
+  .btn-like-combined:hover { background: #f0f2f5; }
+  .btn-like-combined.liked { color: #1877f2; }
+  .btn-like-combined.liked svg { fill: #1877f2; stroke: #1877f2; }
+
+  /* سطر التعليقات */
+  .comment-row {
+    padding: 6px 18px 12px 18px;
+    border-top: 1px solid #e4e6eb;
+    font-size: 0.9rem;
+    color: #65676b;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
 
   /* last comment preview under each post */
   .last-comment-preview {
@@ -159,66 +206,62 @@
       ════════════════════════════════════════ -->
       {% for post in post_list %}
       <div class="card post-card mb-3" id="post-{{ post.id }}">
+        <!-- Title -->
+        <h2 class="post-title" style="font-size: 1.75rem; font-weight: 700; margin: 0 18px 10px 18px;">
+            {{ post.title }}
+        </h2>
 
-        <!-- Author header -->
-        <div class="card-header d-flex align-items-center">
-          <div class="author-avatar mr-2">{{ post.author.username|first|upper }}</div>
-          <div class="ml-2">
-            <div class="author-name">{{ post.author.username }}</div>
-            <div class="post-time">{{ post.created_on|date:"M d, Y · H:i" }}</div>
-          </div>
-        </div>
+        <!-- Author & Date -->
+        <p class="text-muted" style="margin: 0 18px 10px 18px; font-size: 0.9rem;">
+            {{ post.author.username }} | {{ post.created_at|date:"F d, Y, g:i a" }}
+        </p>
 
-        <!-- ✅ Featured Image - Responsive Thumbnail -->
+        <!-- Featured Image (if exists) -->
         {% if post.image %}
         <img src="{{ post.image.url }}"
-             style="width: 100%; height: 250px; object-fit: cover; border-top: 1px solid #f0f2f5; border-bottom: 1px solid #f0f2f5;"
+             style="width: 100%; height: 250px; object-fit: cover; border-radius: 0; margin-bottom: 15px;"
              alt="{{ post.title }}">
         {% endif %}
 
-        <!-- Content -->
-        <div class="post-title">{{ post.title }}</div>
-        <div class="post-content">{{ post.content|slice:":300" }}{% if post.content|length > 300 %}…{% endif %}</div>
-
-        <!-- Like count row -->
-        <div class="px-3 pb-1" style="font-size:13px; color:#65676b;">
-          {% if post.likes.count > 0 %}
-          <span>👍 <span id="like-count-{{ post.id }}">{{ post.likes.count }}</span> like{{ post.likes.count|pluralize }}</span>
-          {% else %}
-          <span id="like-count-wrap-{{ post.id }}"></span>
-          {% endif %}
+        <!-- Content excerpt -->
+        <div class="post-content" style="margin: 0 18px 15px 18px; font-size: 1rem; line-height: 1.5;">
+            {{ post.content|truncatewords:30|safe }}
         </div>
 
-        <!-- Action bar -->
-        <div class="like-bar">
-          <button class="btn-like {% if post.id in liked_ids %}liked{% endif %}"
-                  id="like-btn-{{ post.id }}"
-                  data-slug="{{ post.slug }}"
-                  data-id="{{ post.id }}"
-                  onclick="toggleLike(this)"
-                  {% if not user.is_authenticated %}disabled title="Log in to like"{% endif %}>
-            <svg viewBox="0 0 24 24" fill="{% if post.id in liked_ids %}#1877f2{% else %}none{% endif %}"
-                 stroke="{% if post.id in liked_ids %}#1877f2{% else %}currentColor{% endif %}" stroke-width="2">
-              <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/>
-              <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
-            </svg>
-            <span id="like-label-{{ post.id }}">
-              {% if post.id in liked_ids %}Liked{% else %}Like{% endif %}
-            </span>
-          </button>
+        <!-- ========== القسم السفلي الجديد (المطلوب) ========== -->
+        <!-- السطر الأول: Like + Read More في صف واحد -->
+        <div class="post-footer-row">
+            <div class="like-read-row">
+                <!-- زر Like مع العدد داخل الزر -->
+                <button class="btn-like-combined {% if post.id in liked_ids %}liked{% endif %}"
+                        id="like-btn-{{ post.id }}"
+                        data-slug="{{ post.slug }}"
+                        data-id="{{ post.id }}"
+                        onclick="toggleLike(this)"
+                        {% if not user.is_authenticated %}disabled title="سجل الدخول للإعجاب"{% endif %}>
+                    <svg viewBox="0 0 24 24" width="18" height="18"
+                         fill="{% if post.id in liked_ids %}#1877f2{% else %}none{% endif %}"
+                         stroke="{% if post.id in liked_ids %}#1877f2{% else %}currentColor{% endif %}"
+                         stroke-width="2">
+                        <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/>
+                        <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
+                    </svg>
+                    <span id="like-label-{{ post.id }}">{% if post.id in liked_ids %}Liked{% else %}Like{% endif %}</span>
+                    <span id="like-count-{{ post.id }}">{{ post.likes.count }}</span>
+                </button>
 
-          <a href="{% url 'blog:post_detail' slug=post.slug %}" class="btn-read">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-            </svg>
-            Read More
-          </a>
+                <!-- زر Read More - نفس تنسيق زر Post (أزرق) -->
+                <a href="{% url 'blog:post_detail' slug=post.slug %}" class="btn btn-primary btn-sm" style="border-radius: 6px;">
+                    Read More →
+                </a>
+            </div>
         </div>
 
-        <!-- Comment count -->
-        <div class="comment-count">
-          <span class="comment-badge">{{ post.comment_count }} comments</span>
+        <!-- السطر الثاني: عدد التعليقات مع أيقونة -->
+        <div class="comment-row">
+            💬 <span id="comment-count-{{ post.id }}">{{ post.comment_count }}</span> comment{{ post.comment_count|pluralize }}
         </div>
+        <!-- ========== نهاية القسم السفلي الجديد ========== -->
 
       </div>
       {% empty %}
@@ -231,12 +274,11 @@
   </div>
 </div>
 
-<!-- Like AJAX Script -->
+<!-- مثل AJAX Script (معدل ليعمل مع الزر الجديد) -->
 <script>
 function toggleLike(btn) {
   const slug   = btn.dataset.slug;
   const postId = btn.dataset.id;
-  // ✅ Fixed: Use correct URL pattern /post/{slug}/like/
   fetch(`/post/${slug}/like/`, {
     method: 'POST',
     headers: {
@@ -246,24 +288,24 @@ function toggleLike(btn) {
   })
   .then(r => r.json())
   .then(data => {
-    const countEl  = document.getElementById(`like-count-${postId}`);
-    const labelEl  = document.getElementById(`like-label-${postId}`);
-    const svg      = btn.querySelector('svg');
+    const countSpan = document.getElementById(`like-count-${postId}`);
+    const labelSpan = document.getElementById(`like-label-${postId}`);
+    const svg       = btn.querySelector('svg');
 
     if (data.liked) {
       btn.classList.add('liked');
       svg.setAttribute('fill', '#1877f2');
       svg.setAttribute('stroke', '#1877f2');
-      labelEl.textContent = 'Liked';
+      labelSpan.textContent = 'Liked';
     } else {
       btn.classList.remove('liked');
       svg.setAttribute('fill', 'none');
       svg.setAttribute('stroke', 'currentColor');
-      labelEl.textContent = 'Like';
+      labelSpan.textContent = 'Like';
     }
 
-    if (countEl) {
-      countEl.textContent = data.total_likes;
+    if (countSpan) {
+      countSpan.textContent = data.total_likes;
     }
   });
 }
