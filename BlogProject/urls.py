@@ -5,18 +5,22 @@ URL configuration for BlogProject.
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.contrib.auth import views as auth_views  #  Password reset views
+from django.contrib.auth import views as auth_views
 from django.urls import path, include
+from blog.views import health_check_view
+from blog.admin import admin_site
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),
+    # Health check at root level (for Docker/monitoring)
+    path('health/', health_check_view, name='health_check_root'),
+    
+    path('admin/', admin_site.urls),
     path('', include('blog.urls')),
     path('api/', include('blog.api.urls')),
     path('api-auth/', include('rest_framework.urls')),
     
-    #  Password Reset Views
+    # Password Reset Views
     path('password-reset/', 
          auth_views.PasswordResetView.as_view(template_name='password_reset.html'), 
          name='password_reset'),

@@ -4,6 +4,7 @@ from django.utils.text import slugify
 
 
 class Category(models.Model):
+    #Django ORM لا يعتبر الكلاس جدولاً في قاعدة البيانات إلا إذا ورث من models.Model.
     """
      فئات المنشورات - تنظيم المحتوى
     (Blog post category for organizing content)
@@ -38,7 +39,9 @@ class Post(models.Model):
         PUBLISH = 1, "Published"
 
     title = models.CharField(max_length=200, unique=True, db_index=True)
+    
     slug = models.SlugField(max_length=200, unique=True, db_index=True)
+    #ربط المنشور بمستخدم واحد.
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,

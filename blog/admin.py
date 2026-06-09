@@ -1,11 +1,27 @@
 from django.contrib import admin
+from django.contrib.auth.models import User
 from .models import Post, Comment, Like, Category
 
 
-@admin.register(Category)
+class BlogAdminSite(admin.AdminSite):
+    site_header = "Blog Admin"
+    site_title = "Blog Admin"
+    index_title = "Dashboard"
+
+    def index(self, request, extra_context=None):
+        extra_context = extra_context or {}
+        extra_context['post_count'] = Post.objects.count()
+        extra_context['comment_count'] = Comment.objects.count()
+        extra_context['like_count'] = Like.objects.count()
+        extra_context['user_count'] = User.objects.count()
+        return super().index(request, extra_context=extra_context)
+
+
+admin_site = BlogAdminSite(name='blog_admin')
+
+
+@admin.register(Category, site=admin_site)
 class CategoryAdmin(admin.ModelAdmin):
-    """Admin interface for blog categories."""
-    
     list_display = ('name', 'slug', 'created_at')
     list_filter = ('created_at',)
     search_fields = ['name']
@@ -13,10 +29,8 @@ class CategoryAdmin(admin.ModelAdmin):
     ordering = ['name']
 
 
-@admin.register(Post)
+@admin.register(Post, site=admin_site)
 class PostAdmin(admin.ModelAdmin):
-    """Admin interface for blog posts with enhanced features."""
-    
     list_display = ('title', 'author', 'category', 'status', 'created_at')
     list_filter = ('status', 'category', 'created_at')
     search_fields = ['title', 'content', 'author__username']
@@ -24,7 +38,7 @@ class PostAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at', 'updated_at')
     ordering = ['-created_at']
     date_hierarchy = 'created_at'
-    
+
     fieldsets = (
         ('Content', {
             'fields': ('title', 'slug', 'category', 'excerpt', 'content', 'image')
@@ -35,23 +49,20 @@ class PostAdmin(admin.ModelAdmin):
     )
 
     def save_model(self, request, obj, form, change):
-        """Automatically set author when creating a post."""
         if not change:
             obj.author = request.user
         super().save_model(request, obj, form, change)
 
 
-@admin.register(Comment)
+@admin.register(Comment, site=admin_site)
 class CommentAdmin(admin.ModelAdmin):
-    """Admin interface for comments with moderation features."""
-    
     list_display = ('author', 'post', 'active', 'created_at')
     list_filter = ('active', 'created_at', 'post')
     search_fields = ['author__username', 'content', 'post__title']
     readonly_fields = ('created_at',)
     ordering = ['-created_at']
     actions = ['approve_comments', 'reject_comments']
-    
+
     fieldsets = (
         ('Comment Details', {
             'fields': ('post', 'author', 'content')
@@ -62,20 +73,16 @@ class CommentAdmin(admin.ModelAdmin):
     )
 
     def approve_comments(self, request, queryset):
-        """Action to approve selected comments."""
         updated = queryset.update(active=True)
         self.message_user(request, f"{updated} comment(s) approved.")
 
     def reject_comments(self, request, queryset):
-        """Action to reject selected comments."""
         updated = queryset.update(active=False)
         self.message_user(request, f"{updated} comment(s) rejected.")
 
 
-@admin.register(Like)
+@admin.register(Like, site=admin_site)
 class LikeAdmin(admin.ModelAdmin):
-    """Admin interface for likes."""
-    
     list_display = ('user', 'post', 'created_at')
     list_filter = ('created_at', 'post')
     search_fields = ['user__username', 'post__title']

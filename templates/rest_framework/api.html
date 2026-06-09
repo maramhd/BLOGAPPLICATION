@@ -1,0 +1,335 @@
+{% extends "rest_framework/base.html" %}
+{% load static %}
+
+{% block style %}
+{{ block.super }}
+<style>
+  :root {
+    --primary: #667eea;
+    --accent: #764ba2;
+    --bg: #f7f8fc;
+    --card-bg: #ffffff;
+    --text: #2d3748;
+    --text-muted: #718096;
+    --border: #e2e8f0;
+  }
+
+  body { background: var(--bg) !important; }
+
+  /* ── Navbar override ── */
+  .navbar { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important; box-shadow: 0 4px 20px rgba(102,126,234,.35); }
+  .navbar-brand { font-weight: 800 !important; font-size: 18px !important; }
+  .navbar a { color: rgba(255,255,255,.9) !important; }
+  .navbar a:hover { color: #fff !important; }
+
+  /* ── Hero ── */
+  .api-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    padding: 40px;
+    margin: 24px 20px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .api-hero::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    right: -15%;
+    width: 350px;
+    height: 350px;
+    background: rgba(255,255,255,.08);
+    border-radius: 50%;
+  }
+  .api-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -70%;
+    left: -10%;
+    width: 250px;
+    height: 250px;
+    background: rgba(255,255,255,.05);
+    border-radius: 50%;
+  }
+  .api-hero h1 {
+    font-size: 32px;
+    font-weight: 800;
+    margin: 0 0 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .api-hero p {
+    font-size: 15px;
+    opacity: .85;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Endpoint cards ── */
+  .api-endpoints {
+    padding: 0 20px 40px;
+  }
+  .endpoint-group {
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .endpoint-group-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    padding: 14px 20px;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .endpoint-group-body { padding: 0; }
+
+  .endpoint-item {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    border-bottom: 1px solid #e2e8f0;
+    transition: background .15s;
+    text-decoration: none;
+    color: var(--text);
+  }
+  .endpoint-item:last-child { border-bottom: none; }
+  .endpoint-item:hover { background: #f7f8fc; }
+
+  .method-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    min-width: 55px;
+    text-align: center;
+    margin-right: 14px;
+    flex-shrink: 0;
+  }
+  .method-get    { background: #ebf8ff; color: #2b6cb0; }
+  .method-post   { background: #f0fff4; color: #276749; }
+  .method-put    { background: #fffaf0; color: #c05621; }
+  .method-patch  { background: #fffaf0; color: #c05621; }
+  .method-delete { background: #fff5f5; color: #c53030; }
+
+  .endpoint-info { flex: 1; }
+  .endpoint-name { font-weight: 700; font-size: 14px; color: var(--text); }
+  .endpoint-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+  .endpoint-arrow { color: #cbd5e0; font-size: 18px; margin-left: 10px; }
+
+  /* ── Quick Start Box ── */
+  .quick-start {
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    margin: 0 20px 20px;
+    overflow: hidden;
+  }
+  .quick-start-header {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    color: #fff;
+    padding: 14px 20px;
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .quick-start-body { padding: 20px; }
+  .code-block {
+    background: #1a202c;
+    color: #e2e8f0;
+    border-radius: 8px;
+    padding: 16px;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-x: auto;
+    margin: 8px 0;
+  }
+  .code-block .comment { color: #718096; }
+  .code-block .string  { color: #68d391; }
+  .code-block .keyword { color: #90cdf4; }
+</style>
+{% endblock %}
+
+{% block content %}
+{{ block.super }}
+
+<!-- Hero -->
+<div class="api-hero">
+  <h1>Blog REST API</h1>
+  <p>Full-featured blog API with JWT authentication, pagination, filtering, and search.</p>
+</div>
+
+<!-- Quick Start -->
+<div class="quick-start">
+  <div class="quick-start-header">&#9889; Quick Start</div>
+  <div class="quick-start-body">
+    <p style="margin:0 0 8px; font-weight:600; color:#2d3748;">1. Get a JWT token:</p>
+    <div class="code-block">
+<span class="keyword">POST</span> /api/auth/token/<br>
+{<br>
+&nbsp;&nbsp;<span class="string">"username"</span>: <span class="string">"your_user"</span>,<br>
+&nbsp;&nbsp;<span class="string">"password"</span>: <span class="string">"your_pass"</span><br>
+}
+    </div>
+    <p style="margin:12px 0 8px; font-weight:600; color:#2d3748;">2. Use the token in requests:</p>
+    <div class="code-block">
+<span class="keyword">GET</span> /api/posts/<br>
+<span class="comment">Authorization: Bearer &lt;your_access_token&gt;</span>
+    </div>
+  </div>
+</div>
+
+<!-- Endpoints -->
+<div class="api-endpoints">
+  <!-- Authentication -->
+  <div class="endpoint-group">
+    <div class="endpoint-group-header">&#128274; Authentication</div>
+    <div class="endpoint-group-body">
+      <a class="endpoint-item" href="/api/auth/register/">
+        <span class="method-badge method-post">POST</span>
+        <div class="endpoint-info">
+          <div class="endpoint-name">/api/auth/register/</div>
+          <div class="endpoint-desc">Register a new user account</div>
+        </div>
+        <span class="endpoint-arrow">&#8250;</span>
+      </a>
+      <a class="endpoint-item" href="/api/auth/login/">
+        <span class="method-badge method-post">POST</span>
+        <div class="endpoint-info">
+          <div class="endpoint-name">/api/auth/login/</div>
+          <div class="endpoint-desc">Login and receive JWT tokens</div>
+        </div>
+        <span class="endpoint-arrow">&#8250;</span>
+      </a>
+      <a class="endpoint-item" href="/api/auth/token/">
+        <span class="method-badge method-post">POST</span>
+        <div class="endpoint-info">
+          <div class="endpoint-name">/api/auth/token/</div>
+          <div class="endpoint-desc">Get JWT access &amp; refresh tokens</div>
+        </div>
+        <span class="endpoint-arrow">&#8250;</span>
+      </a>
+      <a class="endpoint-item" href="/api/auth/token/refresh/">
+        <span class="method-badge method-post">POST</span>
+        <div class="endpoint-info">
+          <div class="endpoint-name">/api/auth/token/refresh/</div>
+          <div class="endpoint-desc">Refresh an expired access token</div>
+        </div>
+        <span class="endpoint-arrow">&#8250;</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Posts -->
+  <div class="endpoint-group">
+    <div class="endpoint-group-header">&#128196; Posts</div>
+    <div class="endpoint-group-body">
+      <a class="endpoint-item" href="/api/posts/">
+        <span class="method-badge method-get">GET</span>
+        <div class="endpoint-info">
+          <div class="endpoint-name">/api/posts/</div>
+          <div class="endpoint-desc">List all published posts (paginated)</div>
+        </div>
+        <span class="endpoint-arrow">&#8250;</span>
+      </a>
+      <a class="endpoint-item" href="/api/posts/">
+        <span class="method-badge method-post">POST</span>
+        <div class="endpoint-info">
+          <div class="endpoint-name">/api/posts/</div>
+          <div class="endpoint-desc">Create a new blog post (auth required)</div>
+        </div>
+        <span class="endpoint-arrow">&#8250;</span>
+      </a>
+      <a class="endpoint-item" href="/api/posts/trending/">
+        <span class="method-badge method-get">GET</span>
+        <div class="endpoint-info">
+          <div class="endpoint-name">/api/posts/trending/</div>
+          <div class="endpoint-desc">Get trending posts (most liked/commented)</div>
+        </div>
+        <span class="endpoint-arrow">&#8250;</span>
+      </a>
+      <a class="endpoint-item" href="/api/posts/my_posts/">
+        <span class="method-badge method-get">GET</span>
+        <div class="endpoint-info">
+          <div class="endpoint-name">/api/posts/my_posts/</div>
+          <div class="endpoint-desc">Get current user's posts (auth required)</div>
+        </div>
+        <span class="endpoint-arrow">&#8250;</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Comments -->
+  <div class="endpoint-group">
+    <div class="endpoint-group-header">&#128172; Comments</div>
+    <div class="endpoint-group-body">
+      <a class="endpoint-item" href="/api/comments/">
+        <span class="method-badge method-get">GET</span>
+        <div class="endpoint-info">
+          <div class="endpoint-name">/api/comments/</div>
+          <div class="endpoint-desc">List all comments</div>
+        </div>
+        <span class="endpoint-arrow">&#8250;</span>
+      </a>
+      <a class="endpoint-item" href="/api/comments/">
+        <span class="method-badge method-post">POST</span>
+        <div class="endpoint-info">
+          <div class="endpoint-name">/api/comments/</div>
+          <div class="endpoint-desc">Create a new comment (auth required)</div>
+        </div>
+        <span class="endpoint-arrow">&#8250;</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Categories -->
+  <div class="endpoint-group">
+    <div class="endpoint-group-header">&#128193; Categories</div>
+    <div class="endpoint-group-body">
+      <a class="endpoint-item" href="/api/categories/">
+        <span class="method-badge method-get">GET</span>
+        <div class="endpoint-info">
+          <div class="endpoint-name">/api/categories/</div>
+          <div class="endpoint-desc">List all categories with post counts</div>
+        </div>
+        <span class="endpoint-arrow">&#8250;</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Likes -->
+  <div class="endpoint-group">
+    <div class="endpoint-group-header">&#10084; Likes</div>
+    <div class="endpoint-group-body">
+      <a class="endpoint-item" href="/api/likes/">
+        <span class="method-badge method-get">GET</span>
+        <div class="endpoint-info">
+          <div class="endpoint-name">/api/likes/</div>
+          <div class="endpoint-desc">List all likes</div>
+        </div>
+        <span class="endpoint-arrow">&#8250;</span>
+      </a>
+      <a class="endpoint-item" href="/api/likes/">
+        <span class="method-badge method-post">POST</span>
+        <div class="endpoint-info">
+          <div class="endpoint-name">/api/likes/</div>
+          <div class="endpoint-desc">Create a like (auth required)</div>
+        </div>
+        <span class="endpoint-arrow">&#8250;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

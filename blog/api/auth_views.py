@@ -1,6 +1,5 @@
 """
  DRF Authentication Views - User Registration and Login
-تطبيق المصادقة في API - تسجيل المستخدمين والدخول
 """
 
 import logging
@@ -9,10 +8,15 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
-from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from ..serializers import UserSerializer
+
+try:
+    from rest_framework_simplejwt.tokens import RefreshToken
+    HAS_SIMPLEJWT = True
+except ImportError:
+    HAS_SIMPLEJWT = False
 
 logger = logging.getLogger(__name__)
 
@@ -81,18 +85,21 @@ class UserRegisterView(APIView):
             # إنشاء Token للمستخدم (Create token for user)
             token, created = Token.objects.get_or_create(user=user)
             
-            # إنشاء JWT tokens (Create JWT tokens)
-            refresh = RefreshToken.for_user(user)
+            response_data = {
+                'user': UserSerializer(user).data,
+                'token': token.key,
+                'message': 'Registration successful'
+            }
+            
+            # إنشاء JWT tokens if available
+            if HAS_SIMPLEJWT:
+                refresh = RefreshToken.for_user(user)
+                response_data['refresh'] = str(refresh)
+                response_data['access'] = str(refresh.access_token)
             
             logger.info(f"New user registered via API: {username}")
             
-            return Response({
-                'user': UserSerializer(user).data,
-                'token': token.key,
-                'refresh': str(refresh),
-                'access': str(refresh.access_token),
-                'message': 'Registration successful'
-            }, status=status.HTTP_201_CREATED)
+            return Response(response_data, status=status.HTTP_201_CREATED)
             
         except Exception as e:
             logger.error(f"Registration error: {str(e)}")
@@ -140,18 +147,21 @@ class UserLoginView(APIView):
             # الحصول على Token (Get or create token)
             token, created = Token.objects.get_or_create(user=user)
             
-            # إنشاء JWT tokens (Create JWT tokens)
-            refresh = RefreshToken.for_user(user)
+            response_data = {
+                'user': UserSerializer(user).data,
+                'token': token.key,
+                'message': 'Login successful'
+            }
+            
+            # إنشاء JWT tokens if available
+            if HAS_SIMPLEJWT:
+                refresh = RefreshToken.for_user(user)
+                response_data['refresh'] = str(refresh)
+                response_data['access'] = str(refresh.access_token)
             
             logger.info(f"User logged in via API: {username}")
             
-            return Response({
-                'user': UserSerializer(user).data,
-                'token': token.key,
-                'refresh': str(refresh),
-                'access': str(refresh.access_token),
-                'message': 'Login successful'
-            }, status=status.HTTP_200_OK)
+            return Response(response_data, status=status.HTTP_200_OK)
             
         except Exception as e:
             logger.error(f"Login error: {str(e)}")

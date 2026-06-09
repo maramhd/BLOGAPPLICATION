@@ -1,16 +1,15 @@
 import os
 from pathlib import Path
-
+from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-hpo_pp1js9!t*3l4xl#0kcgx#=tm3--^c9%r-ykzh2b(o1uecw')
+SECRET_KEY = config('SECRET_KEY', default='django-insecure-hpo_pp1js9!t*3l4xl#0kcgx#=tm3--^c9%r-ykzh2b(o1uecw')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'True') == 'True'
-#في مرحلة التطوير نضعهاtrue  وفي مرحلة الانتاج نضعها false
-ALLOWED_HOSTS_STR = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1,testserver')
+DEBUG = config('DEBUG', default='True', cast=bool)
+ALLOWED_HOSTS_STR = config('ALLOWED_HOSTS', default='localhost,127.0.0.1,testserver')
 ALLOWED_HOSTS = [host.strip() for host in ALLOWED_HOSTS_STR.split(',')]
 
 # Application definition
@@ -23,12 +22,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
 
-    'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.facebook',
     
     # Third-party apps
     'rest_framework',
@@ -39,12 +33,13 @@ INSTALLED_APPS = [
     # Local apps
     'blog',
 ]
-SITE_ID = 1
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
+import importlib
+HAS_SIMPLEJWT = importlib.util.find_spec('rest_framework_simplejwt') is not None
 
-    'allauth.account.auth_backends.AuthenticationBackend',
-)
+SITE_ID = 1
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'corsheaders.middleware.CorsMiddleware',
@@ -52,7 +47,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'allauth.account.middleware.AccountMiddleware',
+    
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -125,9 +120,9 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-# ============================================================================
-# CACHING CONFIGURATION (Redis - optional)
-# ============================================================================
+# 
+# CACHING CONFIGURATION 
+# 
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
@@ -144,10 +139,11 @@ CACHE_TIMEOUT = 3600
 #  تكوين كامل لـ DRF مع JWT و Token Authentication
 # (Complete DRF configuration with JWT and Token Authentication)
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',  #  JWT
-        'rest_framework.authentication.TokenAuthentication',           # Token
-        'rest_framework.authentication.SessionAuthentication',         # Session
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        ['rest_framework_simplejwt.authentication.JWTAuthentication'] if HAS_SIMPLEJWT else []
+    ) + [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
@@ -180,36 +176,35 @@ REST_FRAMEWORK = {
 # (JWT settings for secure authentication)
 from datetime import timedelta
 
-SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-    'ROTATE_REFRESH_TOKENS': True,
-    'BLACKLIST_AFTER_ROTATION': True,
-    'UPDATE_LAST_LOGIN': False,
+if HAS_SIMPLEJWT:
+    SIMPLE_JWT = {
+        'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+        'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+        'ROTATE_REFRESH_TOKENS': True,
+        'BLACKLIST_AFTER_ROTATION': True,
+        'UPDATE_LAST_LOGIN': False,
 
-    'ALGORITHM': 'HS256',
-    'SIGNING_KEY': SECRET_KEY,
-    'VERIFYING_KEY': None,
-    'AUDIENCE': None,
-    'ISSUER': None,
-    'JTI_CLAIM': 'jti',
-    'TOKEN_TYPE_CLAIM': 'token_type',
+        'ALGORITHM': 'HS256',
+        'SIGNING_KEY': SECRET_KEY,
+        'VERIFYING_KEY': None,
+        'AUDIENCE': None,
+        'ISSUER': None,
+        'JTI_CLAIM': 'jti',
+        'TOKEN_TYPE_CLAIM': 'token_type',
 
-    'AUTH_HEADER_TYPES': ('Bearer',),
-    'AUTH_HEADER_NAME': 'HTTP_AUTHORIZATION',
-    'USER_ID_FIELD': 'id',
-    'USER_ID_CLAIM': 'user_id',
-    'USER_AUTHENTICATION_RULE': 'rest_framework_simplejwt.authentication.default_user_authentication_rule',
+        'AUTH_HEADER_TYPES': ('Bearer',),
+        'AUTH_HEADER_NAME': 'HTTP_AUTHORIZATION',
+        'USER_ID_FIELD': 'id',
+        'USER_ID_CLAIM': 'user_id',
+        'USER_AUTHENTICATION_RULE': 'rest_framework_simplejwt.authentication.default_user_authentication_rule',
 
-    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
-    'TOKEN_USER_CLASS': 'rest_framework_simplejwt.models.TokenUser',
+        'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
+        'TOKEN_USER_CLASS': 'rest_framework_simplejwt.models.TokenUser',
 
-    'JTI_CLAIM': 'jti',
-
-    'SLIDING_TOKEN_REFRESH_EXP_CLAIM': 'refresh_exp',
-    'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
-    'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
-}
+        'SLIDING_TOKEN_REFRESH_EXP_CLAIM': 'refresh_exp',
+        'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
+        'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
+    }
 
 # ============================================================================
 # CORS CONFIGURATION
@@ -297,9 +292,9 @@ LOGS_DIR.mkdir(exist_ok=True)
 # SECURITY SETTINGS (Production)
 # ============================================================================
 if not DEBUG:
-    SECURE_SSL_REDIRECT = os.environ.get('SECURE_SSL_REDIRECT', 'False') == 'True'
-    SESSION_COOKIE_SECURE = os.environ.get('SESSION_COOKIE_SECURE', 'False') == 'True'
-    CSRF_COOKIE_SECURE = os.environ.get('CSRF_COOKIE_SECURE', 'False') == 'True'
+    SECURE_SSL_REDIRECT = config('SECURE_SSL_REDIRECT', default='False', cast=bool)
+    SESSION_COOKIE_SECURE = config('SESSION_COOKIE_SECURE', default='False', cast=bool)
+    CSRF_COOKIE_SECURE = config('CSRF_COOKIE_SECURE', default='False', cast=bool)
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_SECURITY_POLICY = {
         'default-src': ("'self'",),
@@ -328,13 +323,13 @@ if DEBUG:
 else:
     # Production: Configure SMTP settings via environment variables
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_HOST = os.environ.get('EMAIL_HOST', 'smtp.gmail.com')
-    EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 587))
-    EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', 'True') == 'True'
-    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', '')
-    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
-    DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'noreply@blog.com')
+    EMAIL_HOST = config('EMAIL_HOST', default='smtp.gmail.com')
+    EMAIL_PORT = config('EMAIL_PORT', default=587, cast=int)
+    EMAIL_USE_TLS = config('EMAIL_USE_TLS', default='True', cast=bool)
+    EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
+    EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
+    DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='noreply@blog.com')
 
 # From email for password reset
-DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'noreply@blog.local')
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='noreply@blog.local')
 

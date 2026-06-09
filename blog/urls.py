@@ -8,6 +8,9 @@ from . import views
 app_name = 'blog'
 
 urlpatterns = [
+    # Health check endpoint
+    path('health/', views.health_check_view, name='health_check'),
+    
     # Home & Listing
     path('', views.PostListView.as_view(), name='home'),
     
@@ -28,8 +31,9 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),
     
     # Profiles
+     path('profile/edit/', views.profile_edit_view, name='profile_edit'),
+
     path('profile/<str:username>/', views.profile_view, name='profile'),
-    path('profile/edit/', views.profile_edit_view, name='profile_edit'),
     
     # API/AJAX
     path('post/<slug:slug>/like/', views.toggle_like_view, name='toggle_like'),

@@ -1,0 +1,142 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} | Blog Admin{% endblock %}
+
+{% block branding %}
+<a id="branding-link" href="{% url 'admin:index' %}">
+  <div style="display:flex; align-items:center; gap:10px; text-decoration:none;">
+    <div style="width:38px; height:38px; background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                border-radius:10px; display:flex; align-items:center; justify-content:center;
+                color:#fff; font-weight:800; font-size:18px;">B</div>
+    <div>
+      <div style="color:#fff; font-weight:700; font-size:16px; line-height:1.2;">Blog Admin</div>
+      <div style="color:rgba(255,255,255,.7); font-size:11px;">Management Panel</div>
+    </div>
+  </div>
+</a>
+{% endblock %}
+
+{% block extrastyle %}
+<style>
+  :root {
+    --primary: #667eea;
+    --primary-dark: #5a67d8;
+    --accent: #764ba2;
+    --bg: #f7f8fc;
+    --card-bg: #ffffff;
+    --text: #2d3748;
+    --text-muted: #718096;
+    --border: #e2e8f0;
+    --success: #48bb78;
+    --warning: #ed8936;
+    --danger: #fc8181;
+  }
+
+  /* ── Header ── */
+  #header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    box-shadow: 0 4px 20px rgba(102,126,234,.35);
+  }
+  #branding-link { text-decoration: none !important; }
+  #branding-link:hover { opacity: .9; }
+
+  #header a:link, #header a:visited { color: #fff !important; }
+  #header #user-tools a {
+    background: rgba(255,255,255,.15);
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-weight: 600;
+    transition: background .2s;
+  }
+  #header #user-tools a:hover { background: rgba(255,255,255,.25); }
+
+  /* ── Content ── */
+  #content { background: var(--bg); }
+
+  /* ── Breadcrumbs ── */
+  #branding + div #content-head {
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 16px 24px;
+    margin: 16px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+
+  /* ── Module Cards ── */
+  .module {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06) !important;
+    margin-bottom: 20px !important;
+    overflow: hidden;
+  }
+  .module caption, .module h2 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+    padding: 12px 18px !important;
+    border-radius: 12px 12px 0 0 !important;
+    font-size: 14px !important;
+  }
+  .module h2 a { color: #fff !important; text-decoration: none; }
+  .module h2 a:hover { opacity: .85; }
+
+  /* ── Table ── */
+  .module table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .module th {
+    background: #f7f8fc !important;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: var(--text-muted);
+    padding: 10px 16px !important;
+    border-bottom: 2px solid var(--border) !important;
+  }
+  .module td {
+    padding: 10px 16px !important;
+    border-bottom: 1px solid var(--border) !important;
+    font-size: 13px;
+  }
+  .module tr:hover td { background: #f7f8fc; }
+
+  /* ── Links ── */
+  .module a { color: var(--primary) !important; font-weight: 600; }
+  .module a:hover { color: var(--primary-dark) !important; text-decoration: underline; }
+
+  /* ── Add row button ── */
+  .addlink {
+    background: var(--success) !important;
+    color: #fff !important;
+    padding: 6px 16px !important;
+    border-radius: 6px !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    text-decoration: none !important;
+    display: inline-block;
+    transition: transform .15s;
+  }
+  .addlink:hover { transform: translateY(-1px); box-shadow: 0 2px 8px rgba(72,187,120,.3); }
+
+  /* ── Footer ── */
+  #footer {
+    background: var(--card-bg);
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 12px 20px;
+    font-size: 12px;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    #content { padding: 0 8px; }
+    .module { border-radius: 8px !important; }
+  }
+</style>
+{% endblock %}

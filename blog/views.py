@@ -442,7 +442,7 @@ def profile_view(request, username: str):
     return render(request, 'profile.html', context)
 
 
-@login_required
+
 @login_required
 def profile_edit_view(request):
     """Edit user profile."""
@@ -468,7 +468,45 @@ def page_not_found_view(request, exception=None):
     return render(request, '404.html', status=404)
 
 
-def server_error_view(request, exception=None):
+def server_error_view(request):
     """Handle 500 errors."""
-    logger.error(f"Server error: {str(exception)}")
+    logger.error("Server error occurred")
     return render(request, '500.html', status=500)
+
+
+def health_check_view(request):
+    """
+    Health check endpoint for container orchestration and monitoring.
+    Checks database connectivity and basic system health.
+    """
+    from django.db import connection
+    from django.core.cache import cache
+    
+    try:
+        # Check database connectivity
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT 1")
+        
+        # Check cache connectivity
+        cache.set('health_check', True, 10)
+        cache_ok = cache.get('health_check')
+        
+        if cache_ok:
+            return JsonResponse({
+                'status': 'healthy',
+                'database': 'connected',
+                'cache': 'connected'
+            }, status=200)
+        else:
+            return JsonResponse({
+                'status': 'degraded',
+                'database': 'connected',
+                'cache': 'error'
+            }, status=200)
+    
+    except Exception as e:
+        logger.error(f"Health check failed: {str(e)}")
+        return JsonResponse({
+            'status': 'unhealthy',
+            'error': str(e)
+        }, status=503)

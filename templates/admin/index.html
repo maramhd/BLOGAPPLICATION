@@ -1,0 +1,236 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block title %}Dashboard | Blog Admin{% endblock %}
+
+{% block content %}
+<style>
+  .dashboard-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    padding: 32px 40px;
+    margin: 20px 20px 0;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .dashboard-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255,255,255,.08);
+    border-radius: 50%;
+  }
+  .dashboard-header::after {
+    content: '';
+    position: absolute;
+    bottom: -60%;
+    left: -10%;
+    width: 200px;
+    height: 200px;
+    background: rgba(255,255,255,.05);
+    border-radius: 50%;
+  }
+  .dashboard-header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0 0 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .dashboard-header p {
+    font-size: 14px;
+    opacity: .85;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 0 20px;
+    margin-top: 24px;
+  }
+  .stat-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: transform .15s, box-shadow .15s;
+  }
+  .stat-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.1); }
+  .stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .stat-icon.blue   { background: #ebf4ff; color: #3182ce; }
+  .stat-icon.green  { background: #f0fff4; color: #38a169; }
+  .stat-icon.purple { background: #faf5ff; color: #805ad5; }
+  .stat-icon.orange { background: #fffaf0; color: #dd6b20; }
+  .stat-info h3 { margin: 0; font-size: 24px; font-weight: 800; color: #2d3748; }
+  .stat-info p  { margin: 0; font-size: 13px; color: #718096; }
+
+  .modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 20px;
+    padding: 24px 20px;
+  }
+  .module-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    overflow: hidden;
+    transition: transform .15s, box-shadow .15s;
+  }
+  .module-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.1); }
+  .module-card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    padding: 14px 20px;
+    font-weight: 700;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .module-card-body { padding: 0; }
+  .module-card-body table { width: 100%; border-collapse: collapse; }
+  .module-card-body th {
+    background: #f7f8fc;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: #718096;
+    padding: 10px 16px;
+    border-bottom: 2px solid #e2e8f0;
+    text-align: left;
+    font-weight: 700;
+  }
+  .module-card-body td {
+    padding: 10px 16px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 13px;
+  }
+  .module-card-body tr:last-child td { border-bottom: none; }
+  .module-card-body tr:hover td { background: #f7f8fc; }
+  .module-card-body a { color: #667eea; font-weight: 600; text-decoration: none; }
+  .module-card-body a:hover { text-decoration: underline; }
+  .module-card-footer {
+    padding: 10px 16px;
+    background: #f7f8fc;
+    border-top: 1px solid #e2e8f0;
+    text-align: right;
+  }
+  .module-card-footer a {
+    color: #667eea;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .module-card-footer a:hover { text-decoration: underline; }
+</style>
+
+<!-- Header -->
+<div class="dashboard-header">
+  <h1>Welcome back, {{ request.user.first_name|default:request.user.username }}</h1>
+  <p>Manage your blog content, users, and settings from here.</p>
+</div>
+
+<!-- Stats -->
+<div class="stats-row">
+  <div class="stat-card">
+    <div class="stat-icon blue">&#128196;</div>
+    <div class="stat-info">
+      <h3>{{ post_count|default:"0" }}</h3>
+      <p>Total Posts</p>
+    </div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon green">&#128172;</div>
+    <div class="stat-info">
+      <h3>{{ comment_count|default:"0" }}</h3>
+      <p>Total Comments</p>
+    </div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon purple">&#10084;</div>
+    <div class="stat-info">
+      <h3>{{ like_count|default:"0" }}</h3>
+      <p>Total Likes</p>
+    </div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon orange">&#128100;</div>
+    <div class="stat-info">
+      <h3>{{ user_count|default:"0" }}</h3>
+      <p>Users</p>
+    </div>
+  </div>
+</div>
+
+<!-- Modules Grid -->
+<div class="modules-grid">
+  {% for app in app_list %}
+  <div class="module-card">
+    <div class="module-card-header">
+      {{ app.name }}
+    </div>
+    <div class="module-card-body">
+      <table>
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for model in app.models %}
+          <tr>
+            <td>
+              {% if model.admin_url %}
+              <a href="{{ model.admin_url }}">{{ model.name }}</a>
+              {% else %}
+              {{ model.name }}
+              {% endif %}
+            </td>
+            <td>
+              {% if model.add_url %}
+              <a href="{{ model.add_url }}" style="color:#48bb78;">+ Add</a>
+              {% endif %}
+              {% if model.view_only %}
+              <a href="{{ model.admin_url }}" style="margin-left:8px;">View</a>
+              {% else %}
+              <a href="{{ model.admin_url }}" style="margin-left:8px;">Change</a>
+              {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{{ block.super }}
+{% endblock %}
