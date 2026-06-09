@@ -208,7 +208,7 @@ BlogApplication/
 #### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/BlogApplication.git
+git clone https://github.com/maramhd/BLOGAPPLICATION.git
 cd BlogApplication
 ```
 
