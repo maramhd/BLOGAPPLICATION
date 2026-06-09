@@ -1,0 +1,48 @@
+"""
+URL configuration for BlogProject.
+"""
+
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib import admin
+from django.contrib.auth import views as auth_views
+from django.urls import path, include
+from blog.views import health_check_view
+from blog.admin import admin_site
+
+
+urlpatterns = [
+    # Health check at root level (for Docker/monitoring)
+    path('health/', health_check_view, name='health_check_root'),
+    
+    path('admin/', admin_site.urls),
+    path('', include('blog.urls')),
+    path('api/', include('blog.api.urls')),
+    path('api-auth/', include('rest_framework.urls')),
+    
+    # Password Reset Views
+    path('password-reset/', 
+         auth_views.PasswordResetView.as_view(template_name='password_reset.html'), 
+         name='password_reset'),
+    
+    path('password-reset/done/', 
+         auth_views.PasswordResetDoneView.as_view(template_name='password_reset_done.html'), 
+         name='password_reset_done'),
+    
+    path('reset/<uidb64>/<token>/', 
+         auth_views.PasswordResetConfirmView.as_view(template_name='password_reset_confirm.html'), 
+         name='password_reset_confirm'),
+    
+    path('reset/done/', 
+         auth_views.PasswordResetCompleteView.as_view(template_name='password_reset_complete.html'), 
+         name='password_reset_complete'),
+]
+
+# Serve media files in development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+# Error handling
+handler404 = 'blog.views.page_not_found_view'
+handler500 = 'blog.views.server_error_view'

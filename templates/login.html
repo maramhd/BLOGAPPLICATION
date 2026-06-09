@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0"><i class="fas fa-sign-in-alt"></i> Login</h4>
+        </div>
+        <div class="card-body">
+          <!-- Traditional Form -->
+          <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="id_username">Username or Email</label>
+              <input type="text" name="username" class="form-control" placeholder="Enter username or email" required id="id_username">
+            </div>
+            <div class="form-group">
+              <label for="id_password">Password</label>
+              <input type="password" name="password" class="form-control" placeholder="Password" required id="id_password">
+            </div>
+            <div class="form-group">
+              <a href="{% url 'password_reset' %}" class="text-muted small">
+                <i class="fas fa-key"></i> Forgot password?
+              </a>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+          </form>
+        </div>
+        <div class="card-footer text-center bg-light">
+          <small>Don't have an account? <a href="{% url 'blog:register' %}">Register here</a></small>
+        </div>
+      </div>
+
+      <!-- Helpful Information -->
+      <div class="alert alert-info mt-3" role="alert">
+        <small>
+          <i class="fas fa-info-circle"></i>
+          <strong>Demo Credentials:</strong><br>
+          Username: demo | Password: demo123
+        </small>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

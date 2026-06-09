@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% block title %}{{ profile_user.username }}'s Profile - Blog{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <!-- Sidebar: User Info -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <div style="width: 80px; height: 80px; background: #3398E1; color: white; border-radius: 50%; 
+                               font-size: 36px; font-weight: 700; margin: 0 auto 15px;
+                               display: flex; align-items: center; justify-content: center;">
+                        {{ profile_user.username|first|upper }}
+                    </div>
+                    
+                    <h3>{{ profile_user.username }}</h3>
+                    
+                    {% if profile_user.first_name or profile_user.last_name %}
+                        <p class="text-muted">
+                            {{ profile_user.first_name }} {{ profile_user.last_name }}
+                        </p>
+                    {% endif %}
+                    
+                    <p class="text-muted small">
+                        <i class="bi bi-envelope"></i> {{ profile_user.email }}<br>
+                        <i class="bi bi-calendar"></i> Joined {{ profile_user.date_joined|date:"F Y" }}
+                    </p>
+                    
+                    <div class="row text-center mt-3">
+                        <div class="col-6">
+                            <h5>{{ posts_count }}</h5>
+                            <small>Posts</small>
+                        </div>
+                        <div class="col-6">
+                            <h5>0</h5>
+                            <small>Followers</small>
+                        </div>
+                    </div>
+                    
+                    {% if is_own_profile %}
+                        <a href="{% url 'blog:profile_edit' %}" class="btn btn-primary btn-sm mt-3" style="width: 100%;">
+                            <i class="bi bi-pencil"></i> Edit Profile
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main: User Posts -->
+        <div class="col-md-8">
+            <h3 class="mb-4">
+                <i class="bi bi-newspaper"></i> Posts by {{ profile_user.username }}
+                <span class="badge bg-secondary">{{ posts_count }}</span>
+            </h3>
+            
+            {% if page_obj %}
+                {% for post in page_obj %}
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            {% if post.image %}
+                                <img src="{{ post.image.url }}" alt="{{ post.title }}" 
+                                     class="img-fluid mb-3 rounded" style="max-height: 250px; object-fit: cover;">
+                            {% endif %}
+                            
+                            <h5 class="card-title">
+                                <a href="{% url 'blog:post_detail' slug=post.slug %}" class="text-decoration-none">
+                                    {{ post.title }}
+                                </a>
+                            </h5>
+                            
+                            <p class="card-text text-muted">
+                                <i class="bi bi-calendar"></i> {{ post.created_at|date:"M d, Y" }} | 
+                                <i class="bi bi-chat"></i> {{ post.comment_count }} Comments |
+                                <i class="bi bi-heart"></i> {{ post.total_likes }} Likes
+                            </p>
+                            
+                            <p class="card-text">
+                                {{ post.excerpt|truncatewords:30 }}
+                            </p>
+                            
+                            <div class="d-flex gap-2 mt-3">
+                                <a href="{% url 'blog:post_detail' slug=post.slug %}" class="btn btn-sm btn-primary">
+                                    <i class="bi bi-eye"></i> Read More
+                                </a>
+                                
+                                {% if is_own_profile %}
+                                    <a href="{% url 'blog:post_edit' slug=post.slug %}" class="btn btn-sm btn-warning">
+                                        <i class="bi bi-pencil"></i> Edit
+                                    </a>
+                                    <a href="{% url 'blog:post_delete' slug=post.slug %}" class="btn btn-sm btn-danger">
+                                        <i class="bi bi-trash"></i> Delete
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% empty %}
+                    <div class="alert alert-info" role="alert">
+                        <i class="bi bi-info-circle"></i>
+                        <strong>No posts yet.</strong> 
+                        {% if is_own_profile %}
+                            <a href="{% url 'post_create' %}">Create your first post!</a>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+
+                <!-- Pagination -->
+                {% if is_paginated %}
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-center">
+                            {% if page_obj.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page=1">First</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+                                        Previous
+                                    </a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                    <span class="page-link">Previous</span>
+                                </li>
+                            {% endif %}
+
+                            <li class="page-item active">
+                                <span class="page-link">
+                                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                                </span>
+                            </li>
+
+                            {% if page_obj.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+                                        Next
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">
+                                        Last
+                                    </a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                    <span class="page-link">Next</span>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,311 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+  body       { font-family: "Roboto", sans-serif; font-size: 18px; background-color: #f0f2f5; }
+  .card      { box-shadow: 0 1px 3px rgba(0,0,0,.15); border-radius: 12px; border: none; }
+
+  /* ── Quick-Post Box ── */
+  .quick-post-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.15);
+    margin-bottom: 20px;
+  }
+  .quick-post-box .avatar {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: #3398E1;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .quick-post-box textarea {
+    border: none;
+    background: #f0f2f5;
+    border-radius: 20px;
+    resize: none;
+    font-size: 16px;
+    padding: 10px 16px;
+  }
+  .quick-post-box textarea:focus { outline: none; box-shadow: none; background: #e8eaed; }
+  .quick-post-box input[type=text] {
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    border-radius: 0;
+    font-size: 15px;
+    padding: 6px 4px;
+    margin-bottom: 8px;
+  }
+  .quick-post-box input[type=text]:focus { outline: none; box-shadow: none; border-color: #3398E1; }
+
+  /* ── Post Card ── */
+  .post-card .card-header {
+    background: #fff;
+    border-bottom: 1px solid #f0f2f5;
+    border-radius: 12px 12px 0 0 !important;
+    padding: 14px 18px 10px;
+  }
+  .post-card .author-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: #3398E1;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .post-card .author-name  { font-weight: 700; font-size: 15px; color: #050505; }
+  .post-card .post-time    { font-size: 12px; color: #65676b; }
+  .post-card .post-title   { font-size: 17px; font-weight: 700; color: #050505; padding: 12px 18px 4px; }
+  .post-card .post-content { font-size: 15px; color: #3c3c3c; padding: 0 18px 12px; }
+
+  /* ── Like bar (أصلي، احتفظنا به للأمان) ── */
+  .like-bar {
+    border-top: 1px solid #e4e6eb;
+    padding: 4px 8px;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .btn-like {
+    display: flex; align-items: center; gap: 6px;
+    background: none; border: none;
+    font-size: 15px; font-weight: 600;
+    color: #65676b;
+    border-radius: 8px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background .15s;
+    flex: 1; justify-content: center;
+  }
+  .btn-like:hover { background: #f0f2f5; }
+  .btn-like.liked { color: #1877f2; }
+  .btn-like svg   { width: 20px; height: 20px; }
+
+  .btn-read {
+    display: flex; align-items: center; gap: 6px;
+    background: none; border: none;
+    font-size: 15px; font-weight: 600;
+    color: #65676b;
+    border-radius: 8px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background .15s;
+    flex: 1; justify-content: center;
+    text-decoration: none;
+  }
+  .btn-read:hover { background: #f0f2f5; color: #050505; }
+
+  
+  .post-footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 18px;
+    border-top: 1px solid #e4e6eb;
+    margin-top: 8px;
+  }
+
+  .like-read-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* زر Likeعدد */
+  .btn-like-combined {
+    background: none;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #65676b;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.15s;
+  }
+  .btn-like-combined:hover { background: #f0f2f5; }
+  .btn-like-combined.liked { color: #1877f2; }
+  .btn-like-combined.liked svg { fill: #1877f2; stroke: #1877f2; }
+
+  /* سطر التعليقات */
+  .comment-row {
+    padding: 6px 18px 12px 18px;
+    border-top: 1px solid #e4e6eb;
+    font-size: 0.9rem;
+    color: #65676b;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* last comment preview under each post */
+  .last-comment-preview {
+    background: #f7f8fa;
+    border-radius: 0 0 12px 12px;
+    padding: 8px 18px 12px;
+    font-size: 13px;
+    color: #555;
+  }
+  .last-comment-preview .lc-author { font-weight: 700; color: #050505; margin-right: 4px; }
+  .last-comment-preview .lc-date   { color: #888; font-size: 11px; margin-left: 6px; }
+</style>
+
+<!-- Header -->
+<header class="masthead">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 mx-auto">
+        <h3 class="my-4 mt-3 text-white">Welcome to my awesome Blog</h3>
+        <p class="text-light">We Love Django As much as you do..!</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-8">
+
+         
+     
+      {% if user.is_authenticated %}
+      <div class="quick-post-box">
+        <div class="d-flex align-items-center mb-2 gap-2">
+          <div class="avatar">{{ user.username|first|upper }}</div>
+          <span class="font-weight-bold ml-2" style="font-size:15px;">{{ user.username }}</span>
+        </div>
+        <form method="POST" action="{% url 'blog:home' %}">
+          {% csrf_token %}
+          <input type="text" name="title" class="form-control" placeholder="Post title..." required>
+          <textarea name="content" class="form-control mt-1" rows="3"
+                    placeholder="What's on your mind, {{ user.username }}?"></textarea>
+          <div class="text-right mt-2">
+            <button type="submit" class="btn btn-primary btn-sm px-4" style="border-radius:6px;">
+              Post
+            </button>
+          </div>
+        </form>
+      </div>
+      {% else %}
+      <div class="quick-post-box text-center text-muted" style="padding:20px;">
+        <a href="/admin/" class="btn btn-outline-primary btn-sm">Log in to post</a>
+      </div>
+      {% endif %}
+
+      <!-- ════════════════════════════════════════
+           Posts Feed
+      ════════════════════════════════════════ -->
+      {% for post in post_list %}
+      <div class="card post-card mb-3" id="post-{{ post.id }}">
+        <!-- Title -->
+        <h2 class="post-title" style="font-size: 1.75rem; font-weight: 700; margin: 0 18px 10px 18px;">
+            {{ post.title }}
+        </h2>
+
+        <!-- Author & Date -->
+        <p class="text-muted" style="margin: 0 18px 10px 18px; font-size: 0.9rem;">
+            {{ post.author.username }} | {{ post.created_at|date:"F d, Y, g:i a" }}
+        </p>
+
+        <!-- Featured Image (if exists) -->
+        {% if post.image %}
+        <img src="{{ post.image.url }}"
+             style="width: 100%; height: 250px; object-fit: cover; border-radius: 0; margin-bottom: 15px;"
+             alt="{{ post.title }}">
+        {% endif %}
+
+        <!-- Content excerpt -->
+        <div class="post-content" style="margin: 0 18px 15px 18px; font-size: 1rem; line-height: 1.5;">
+            {{ post.content|truncatewords:30|safe }}
+        </div>
+
+        <!-- Like + Read More -->
+        <div class="post-footer-row">
+            <div class="like-read-row">
+                <!-- زر Like مع العدد داخل الزر -->
+                <button class="btn-like-combined {% if post.id in liked_ids %}liked{% endif %}"
+                        id="like-btn-{{ post.id }}"
+                        data-slug="{{ post.slug }}"
+                        data-id="{{ post.id }}"
+                        onclick="toggleLike(this)"
+                        {% if not user.is_authenticated %}disabled title="سجل الدخول للإعجاب"{% endif %}>
+                    <svg viewBox="0 0 24 24" width="18" height="18"
+                         fill="{% if post.id in liked_ids %}#1877f2{% else %}none{% endif %}"
+                         stroke="{% if post.id in liked_ids %}#1877f2{% else %}currentColor{% endif %}"
+                         stroke-width="2">
+                        <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/>
+                        <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
+                    </svg>
+                    <span id="like-label-{{ post.id }}">{% if post.id in liked_ids %}Liked{% else %}Like{% endif %}</span>
+                    <span id="like-count-{{ post.id }}">{{ post.likes.count }}</span>
+                </button>
+
+                <a href="{% url 'blog:post_detail' slug=post.slug %}" class="btn btn-primary btn-sm" style="border-radius: 6px;">
+                    Read More →
+                </a>
+            </div>
+        </div>
+
+        <!-- السطر الثاني: عدد التعليقات مع أيقونة -->
+        <div class="comment-row">
+            💬 <span id="comment-count-{{ post.id }}">{{ post.comment_count }}</span> comment{{ post.comment_count|pluralize }}
+        </div>
+       
+
+      </div>
+      {% empty %}
+      <div class="text-muted text-center mt-4">No posts yet. Be the first to post!</div>
+      {% endfor %}
+
+    </div>
+
+    {% block sidebar %}{% include 'sidebar.html' %}{% endblock sidebar %}
+  </div>
+</div>
+
+<!-- مثل AJAX Script (معدل ليعمل مع الزر الجديد) -->
+<script>
+function toggleLike(btn) {
+  const slug   = btn.dataset.slug;
+  const postId = btn.dataset.id;
+  fetch(`/post/${slug}/like/`, {
+    method: 'POST',
+    headers: {
+      'X-CSRFToken': '{{ csrf_token }}',
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(r => r.json())
+  .then(data => {
+    const countSpan = document.getElementById(`like-count-${postId}`);
+    const labelSpan = document.getElementById(`like-label-${postId}`);
+    const svg       = btn.querySelector('svg');
+
+    if (data.liked) {
+      btn.classList.add('liked');
+      svg.setAttribute('fill', '#1877f2');
+      svg.setAttribute('stroke', '#1877f2');
+      labelSpan.textContent = 'Liked';
+    } else {
+      btn.classList.remove('liked');
+      svg.setAttribute('fill', 'none');
+      svg.setAttribute('stroke', 'currentColor');
+      labelSpan.textContent = 'Like';
+    }
+
+    if (countSpan) {
+      countSpan.textContent = data.total_likes;
+    }
+  });
+}
+</script>
+
+{% endblock %}
